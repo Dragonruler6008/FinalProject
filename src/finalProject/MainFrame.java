@@ -180,7 +180,13 @@ public class MainFrame extends JFrame implements ActionListener {
 		else if(e.getSource()==restartButton)
 		{
 			//some restart functions
+			//who starts
+			int starter = ((int)(Math.random()*2)+1);
+			System.out.println("Player " + starter + " starts");
+
 		}
 		
 	}
+
+	//
 }
