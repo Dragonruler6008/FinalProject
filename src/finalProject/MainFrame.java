@@ -91,6 +91,14 @@ public class MainFrame extends JFrame implements ActionListener {
 	
 // 	}
 //  }
+
+	
+	
+	
+	
+	private JTextArea textArea;
+	private JButton btnNewButton;
+
 	
 	//need a starting method here.
 	
