@@ -414,6 +414,8 @@ public class MainFrame extends JFrame implements ActionListener {
 
 
 					restartButton.setText("Restart");
+					gamecounter++;
+					System.out.println(gamecounter);
 
 			}
 			// System.out.println("Player " + starter + " starts");
