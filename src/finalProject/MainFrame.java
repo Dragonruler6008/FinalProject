@@ -41,9 +41,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	int score;
 	int score2;
 	static int startupcounter;
-	static int buttonTurnCounter;
-	static int [] player1Turn = new int [5]; 
-	static int [] player2Turn = new int [5];
+	static int buttonTurnCounter = 0;
+	static int [] playerTurn = new int [9]; 
+
 	int player = 0;
 
 	private JPanel contentPane;
@@ -74,9 +74,6 @@ public class MainFrame extends JFrame implements ActionListener {
 	public static void Startmethod()
 	{
 		startupcounter = 0;
-		buttonTurnCounter = 0;
-		
-		
 	}
 	
 	
@@ -177,20 +174,31 @@ public class MainFrame extends JFrame implements ActionListener {
 		if(e.getSource()==btnNewButton_1)
 		{
 			btnNewButton_1.setEnabled(false);
-			if((buttonTurnCounter + 1) == player1Turn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_1.setText("1");
 			}
-			else if(buttonTurnCounter == player2Turn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_1.setText("2");
 			}
 			else
 			{
 			btnNewButton_1.setText("Game has not started");
 			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_2)
 		{
 			btnNewButton_2.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_2.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_2.setText("2");
+			}
+			else
+			{
+			btnNewButton_2.setText("Game has not started");
+			}
 		}
 		else if(e.getSource()==btnNewButton_3)
 		{
@@ -223,42 +231,37 @@ public class MainFrame extends JFrame implements ActionListener {
 		else if(e.getSource()==restartButton)
 		{
 			//some restart functions
-			//who starts
-			buttonTurnCounter = 0; 
-
+			//who start
 			//player turn variables
 			int starter = ((int)(Math.random()*2)+1);
 			if(starter == 1) {
-				player1Turn[0] = 1;
-				player1Turn[1] = 2;
-				player1Turn[2] = 5;
-				player1Turn[3] = 7;
-				player1Turn[4] = 9;
-				player2Turn[0] = 2;
-				player2Turn[1] = 4;
-				player2Turn[2] = 6;
-				player2Turn[3] = 8;
-				player2Turn[4] = 10;
+				playerTurn[0] = 1;
+				playerTurn[1] = 2;
+				playerTurn[2] = 1;
+				playerTurn[3] = 2;
+				playerTurn[4] = 1;
+				playerTurn[5] = 2;
+				playerTurn[6] = 1;
+				playerTurn[7] = 2;
+				playerTurn[8] = 1;
 				System.out.println(starter);
 				for(int i = 0; i < 5; i++) {
-					System.out.println(player1Turn[i]);
-					System.out.println(player2Turn[i]);
+					System.out.println(playerTurn[i]);
 				}
 			} else {
-				player2Turn[0] = 1;
-				player2Turn[1] = 3;
-				player2Turn[2] = 5;
-				player2Turn[3] = 7;
-				player2Turn[4] = 9;
-				player1Turn[0] = 2;
-				player1Turn[1] = 4;
-				player1Turn[2] = 6;
-				player1Turn[3] = 8;
-				player1Turn[4] = 10;
+				playerTurn[0] = 2;
+				playerTurn[1] = 1;
+				playerTurn[2] = 2;
+				playerTurn[3] = 1;
+				playerTurn[4] = 2;
+				playerTurn[5] = 1;
+				playerTurn[6] = 2;
+				playerTurn[7] = 1;
+				playerTurn[8] = 2;
 				System.out.println(starter);
 				for(int i = 0; i < 5; i++) {
-					System.out.println(player2Turn[i]);
-					System.out.println(player1Turn[i]);
+					System.out.println(playerTurn[i]);
+					System.out.println(playerTurn[i]);
 					
 			}
 		}
