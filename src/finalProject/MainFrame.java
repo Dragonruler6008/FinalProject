@@ -40,7 +40,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	static int gamecounter = 0;
 	int starter;
 
-	int player = 0;
+	//end of globals
 
 	private JPanel contentPane;
 
@@ -62,44 +62,11 @@ public class MainFrame extends JFrame implements ActionListener {
 		});
 	}
 
-
-
-
-
 	//Sets the counter to zero to start the game up.
 	public static void Startmethod()
 	{
 		startupcounter = 0;
-		//Name the restar button to Start to initialsize things.
 	}
-	
-	
-
-	//Need a player 1 and player 2 method.
-	// private static void P1P2()
-	// {
-		
-// 	int [] player = {1,3,5,7,9};
-// 	int [] player2 = {2,4,6,8};
-	
-// 	for(int k = 0; k < 9; k++)
-// 	{
-// 		if(k == player[k]);
-// 		{
-			
-// 		}
-// 		else if
-	
-// 	}
-//  }
-
-	
-	
-
-
-	
-	//need a starting method here.
-	
 
 	//The "MainFrame" where all the buttons get created and set up.
 	public MainFrame() {
@@ -182,13 +149,15 @@ public class MainFrame extends JFrame implements ActionListener {
 		if(e.getSource()==btnNewButton_1)
 		{
 			btnNewButton_1.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_1.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_1.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -196,20 +165,22 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_1.setText("Game has not started");
+				btnNewButton_1.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_2)
 		{
 			btnNewButton_2.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_2.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_2.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -217,20 +188,22 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_2.setText("Game has not started");
+				btnNewButton_2.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_3)
 		{
 			btnNewButton_3.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_3.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_3.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -238,20 +211,22 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_3.setText("Game has not started");
+				btnNewButton_3.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_4)
 		{
 			btnNewButton_4.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_4.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_4.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -259,20 +234,22 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_4.setText("Game has not started");
+				btnNewButton_4.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_5)
 		{
 			btnNewButton_5.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_5.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_5.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -280,20 +257,22 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_5.setText("Game has not started");
+				btnNewButton_5.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_6)
 		{
 			btnNewButton_6.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_6.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_6.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -301,20 +280,22 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_6.setText("Game has not started");
+				btnNewButton_6.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_7)
 		{
 			btnNewButton_7.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_7.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_7.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -322,20 +303,22 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_7.setText("Game has not started");
+				btnNewButton_7.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}	
 		else if(e.getSource()==btnNewButton_8)
 		{
 			btnNewButton_8.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_8.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_8.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -343,20 +326,22 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_8.setText("Game has not started");
+				btnNewButton_8.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_9)
 		{
 			btnNewButton_9.setEnabled(false);
-			if(1 == playerTurn[buttonTurnCounter]) {
+			if(1 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_9.setText("1");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
 			}
-			else if(2 == playerTurn[buttonTurnCounter]) {
+			else if(2 == playerTurn[buttonTurnCounter]) 
+			{
 				btnNewButton_9.setText("2");
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
@@ -364,9 +349,9 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else
 			{
-			btnNewButton_9.setText("Game has not started");
+				btnNewButton_9.setText("Game has not started");
 			}
-			buttonTurnCounter ++;
+				buttonTurnCounter ++;
 		}
 		else if(e.getSource()==restartButton)
 		{
@@ -402,8 +387,8 @@ public class MainFrame extends JFrame implements ActionListener {
 						// 	System.out.println(playerTurn[i]);
 						// }
 						String gametemplete = "<html><i>Game number %d <br>Player %d starts!</i><html>";
-					String text1 = String.format(gametemplete, gamecounter, starter);
-					textArea_1.setText(text1);
+						String text1 = String.format(gametemplete, gamecounter, starter);
+						textArea_1.setText(text1);
 					} 
 
 				}
@@ -506,9 +491,9 @@ public class MainFrame extends JFrame implements ActionListener {
 			if(startupcounter == 0)
 			{
 				name = Input.getText();
-			startupcounter++;
-			Input.setText("");
-			textArea_1.setText("Player 2 enter your name");
+				startupcounter++;
+				Input.setText("");
+				textArea_1.setText("Player 2 enter your name");
 			}
 			else if(startupcounter == 1)
 			{
@@ -520,14 +505,15 @@ public class MainFrame extends JFrame implements ActionListener {
 				textArea_1.setText(text);
 				Input.setEnabled(false);
 			}
-			else{
+			else
+			{
 				System.out.println("why you still typing here...");
 				Input.setText("");
 			}
 		}
 	}
 
-	//Wait method to add delay to things we need.
+	//Wait method to add delay to things we need. KINDA USELESS AT THIS POINT BUT MAY NEED LATER IDK...
 	public static void wait(int ms)
 {
     try
