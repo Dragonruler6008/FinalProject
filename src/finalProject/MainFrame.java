@@ -1,5 +1,6 @@
 package finalProject;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,8 +9,14 @@ import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import java.awt.Button;
+import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.Action;
+import javax.swing.JTextArea;
+import javax.swing.JComboBox;
 import java.util.Scanner;
 import javax.swing.JTextField;
 
@@ -34,6 +41,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		});
 		// Startmethod();
 	}
+
 
 
 
@@ -94,7 +102,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	
 	//need a starting method here.
 	
-	
+
 
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,7 +140,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		contentPane.add(btnNewButton_9);
 		
 		Input = new JTextField(8);  
-		contentPane.add(restartButton); 		
+		contentPane.add(Input); 		
 		
 		restartButton = new JButton("Restart");
 		contentPane.add(restartButton);
@@ -206,17 +214,17 @@ public class MainFrame extends JFrame implements ActionListener {
 			//who starts
 			int starter = ((int)(Math.random()*2)+1);
 			System.out.println("Player " + starter + " starts");
-			try (Scanner keyboard = new Scanner(System.in)) {
-				String name = keyboard.next();
-				String name2 = keyboard.next();
-				int score = 2;
-				int score2 = 1;
+			// try (Scanner keyboard = new Scanner(System.in)) {
+			// 	String name = keyboard.next();
+			// 	String name2 = keyboard.next();
+			// 	int score = 2;
+			// 	int score2 = 1;
 
 
-				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
-				String text = String.format(template, name, score, name2, score2);
-				textArea_1.setText(text);
-			}
+			// 	String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+			// 	String text = String.format(template, name, score, name2, score2);
+			// 	textArea_1.setText(text);
+			// }
 
 
 
