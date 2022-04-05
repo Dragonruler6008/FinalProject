@@ -1,5 +1,6 @@
 package finalProject;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,8 +10,14 @@ import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import java.awt.Button;
+import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.Action;
+import javax.swing.JTextArea;
+import javax.swing.JComboBox;
 import java.util.Scanner;
 import javax.swing.JTextField;
 
@@ -60,6 +67,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 
 
+
 	//STILL TRYING TO FIGURE OUT HOW TO GRAB TEXT FROM THE JFRAMETEXT THINGY. maybe we just go with player 1 and player 2 for now then try to impliment names later on.
 	public static void Startmethod()
 	{
@@ -86,10 +94,18 @@ public class MainFrame extends JFrame implements ActionListener {
 	
 // 	}
 //  }
+
+	
+	
+	
+	
+	private JTextArea textArea;
+	private JButton btnNewButton;
+
 	
 	//need a starting method here.
 	
-	
+
 
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -202,15 +218,13 @@ public class MainFrame extends JFrame implements ActionListener {
 			//who starts
 			int starter = ((int)(Math.random()*2)+1);
 			System.out.println("Player " + starter + " starts");
-			try (Scanner keyboard = new Scanner(System.in)) {
-				int score = 2;
-				int score2 = 1;
 
 
-				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
-				String text = String.format(template, name, score, name2, score2);
-				textArea_1.setText(text);
-			}
+
+			// 	String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+			// 	String text = String.format(template, name, score, name2, score2);
+			// 	textArea_1.setText(text);
+			// }
 
 
 
