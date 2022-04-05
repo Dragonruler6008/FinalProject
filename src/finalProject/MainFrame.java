@@ -41,7 +41,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	int score;
 	int score2;
 	static int startupcounter;
-	
+	static int buttonTurnCounter;
+	static int [] player1Turn = new int [5]; 
+	static int [] player2Turn = new int [5];
 	int player = 0;
 
 	private JPanel contentPane;
@@ -72,6 +74,8 @@ public class MainFrame extends JFrame implements ActionListener {
 	public static void Startmethod()
 	{
 		startupcounter = 0;
+		buttonTurnCounter = 0;
+		
 		
 	}
 	
@@ -173,7 +177,9 @@ public class MainFrame extends JFrame implements ActionListener {
 		if(e.getSource()==btnNewButton_1)
 		{
 			btnNewButton_1.setEnabled(false);
-			if(player >= 1)
+			if(buttonTurnCounter == player1Turn) {
+
+			}
 			{
 			btnNewButton_1.setText("1");
 			}
@@ -205,7 +211,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		else if(e.getSource()==btnNewButton_7)
 		{
 			btnNewButton_7.setEnabled(false);
-		}
+		}	
 		else if(e.getSource()==btnNewButton_8)
 		{
 			btnNewButton_8.setEnabled(false);
@@ -217,9 +223,10 @@ public class MainFrame extends JFrame implements ActionListener {
 		else if(e.getSource()==restartButton)
 		{
 			//some restart functions
-			//who starts//player turn variables
-			int [] player1Turn = new int[5]; 
-			int [] player2Turn = new int [5];
+			//who starts
+			buttonTurnCounter = 0; 
+
+			//player turn variables
 			int starter = ((int)(Math.random()*2)+1);
 			if(starter == 1) {
 				player1Turn[0] = 1;
