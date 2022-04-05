@@ -159,6 +159,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 		textArea_1 = new JLabel();
 		contentPane.add(textArea_1);
+		textArea_1.setFont(textArea_1.getFont().deriveFont(30f));
 		textArea_1.setText("Player 1, enter your name!");
 		
 		
@@ -183,9 +184,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_1.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_1.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_1.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -198,9 +205,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_2.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_2.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_2.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -213,9 +226,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_3.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_3.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_3.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -228,9 +247,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_4.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_4.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_4.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -243,9 +268,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_5.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_5.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_5.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -258,9 +289,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_6.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_6.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_6.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -273,9 +310,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_7.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_7.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_7.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -288,9 +331,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_8.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_8.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_8.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -303,9 +352,15 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_9.setEnabled(false);
 			if(1 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_9.setText("1");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) {
 				btnNewButton_9.setText("2");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
 			}
 			else
 			{
@@ -346,13 +401,16 @@ public class MainFrame extends JFrame implements ActionListener {
 						// for(int i = 0; i < 5; i++) {
 						// 	System.out.println(playerTurn[i]);
 						// }
+						String gametemplete = "<html><i>Game number %d <br>Player %d starts!</i><html>";
+					String text1 = String.format(gametemplete, gamecounter, starter);
+					textArea_1.setText(text1);
 					} 
 
 				}
 				else
 				{
 					buttonTurnCounter = 0;
-					int starter = ((int)(Math.random()*2)+1);
+					starter = ((int)(Math.random()*2)+1);
 					if(starter == 1) 
 					{
 						playerTurn[0] = 1;
@@ -415,7 +473,19 @@ public class MainFrame extends JFrame implements ActionListener {
 
 					restartButton.setText("Restart");
 					gamecounter++;
-					System.out.println(gamecounter);
+					
+					String gametemplete = "<html><i>Game number %d! <br>Player %d starts!</i><html>";
+					String text1 = String.format(gametemplete, gamecounter, starter);
+					textArea_1.setText(text1);
+					System.out.println(starter);
+
+				
+
+				// String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				// String text = String.format(template, name, score, name2, score2);
+				// textArea_1.setText(text);
+					//DEBUG CODE
+					// System.out.println(gamecounter);
 
 			}
 			// System.out.println("Player " + starter + " starts");
@@ -448,6 +518,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				Input.setEnabled(false);
 			}
 			else{
 				System.out.println("why you still typing here...");
@@ -456,6 +527,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		}
 	}
 
+	//Wait method to add delay to things we need.
 	public static void wait(int ms)
 {
     try
