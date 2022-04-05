@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
+
+import javax.lang.model.util.ElementScanner14;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
@@ -14,6 +16,8 @@ import java.util.Scanner;
 import javax.swing.JTextField;
 
 public class MainFrame extends JFrame implements ActionListener {
+
+	
 
 	private JPanel contentPane;
 
@@ -39,23 +43,17 @@ public class MainFrame extends JFrame implements ActionListener {
 
 
 	//STILL TRYING TO FIGURE OUT HOW TO GRAB TEXT FROM THE JFRAMETEXT THINGY. maybe we just go with player 1 and player 2 for now then try to impliment names later on.
-	// public static void Startmethod()
-	// {
-	// System.out.println("Player 1, enter your name.");
-	// Input.addActionListener(new ActionListener(){
-
-	// 	public void actionPerformed(ActionEvent e){
-
-	// 		String name = Input.getText();
-
-	// 	}});
+	public static void Startmethod()
+	{
+		int startupcounter = 0;
+	System.out.println("Player 1, enter your name.");
 				
-	// 		System.out.println("Player 2, enter your name.");
+	System.out.println("Player 2, enter your name.");
 			
-	// 		int score = 2;
-	// 		int score2 = 1;
+			int score = 2;
+			int score2 = 1;
 
-	// }
+	}
 	
 	//Globals
 	JButton btnNewButton_1;
@@ -72,6 +70,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	JLabel textArea_1;
 	String name;
 	String name2;
+	int score;
+	int score2;
+	int startupcounter = 0;
 	
 	int player = 0;
 	//Need a player 1 and player 2 method.
@@ -132,7 +133,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		contentPane.add(btnNewButton_9);
 		
 		Input = new JTextField(8);  
-		contentPane.add(restartButton); 		
+		contentPane.add(Input); 		
 		
 		restartButton = new JButton("Restart");
 		contentPane.add(restartButton);
@@ -207,8 +208,6 @@ public class MainFrame extends JFrame implements ActionListener {
 			int starter = ((int)(Math.random()*2)+1);
 			System.out.println("Player " + starter + " starts");
 			try (Scanner keyboard = new Scanner(System.in)) {
-				String name = keyboard.next();
-				String name2 = keyboard.next();
 				int score = 2;
 				int score2 = 1;
 
@@ -220,6 +219,29 @@ public class MainFrame extends JFrame implements ActionListener {
 
 
 
+		}
+		else if (e.getSource()==Input)
+		{
+			int startupcounter = 0;
+			if(startupcounter == 0)
+			{
+				name = Input.getText();
+			startupcounter++;
+			Input.setText("");
+			textArea_1.setText("Player 2 enter your name");
+			}
+			else if(startupcounter == 1)
+			{
+				name2 = Input.getText();
+				startupcounter++;
+				Input.setText("");
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
+			}
+			else{
+				System.out.println("why you still typing here...");
+			}
 		}
 	}
 }
