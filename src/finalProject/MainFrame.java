@@ -177,15 +177,15 @@ public class MainFrame extends JFrame implements ActionListener {
 		if(e.getSource()==btnNewButton_1)
 		{
 			btnNewButton_1.setEnabled(false);
-			if(buttonTurnCounter == player1Turn) {
-
+			if((buttonTurnCounter + 1) == player1Turn[buttonTurnCounter]) {
+				btnNewButton_1.setText("1");
 			}
-			{
-			btnNewButton_1.setText("1");
+			else if(buttonTurnCounter == player2Turn[buttonTurnCounter]) {
+				btnNewButton_1.setText("2");
 			}
 			else
 			{
-			btnNewButton_1.setText("0");
+			btnNewButton_1.setText("Game has not started");
 			}
 		}
 		else if(e.getSource()==btnNewButton_2)
@@ -230,7 +230,7 @@ public class MainFrame extends JFrame implements ActionListener {
 			int starter = ((int)(Math.random()*2)+1);
 			if(starter == 1) {
 				player1Turn[0] = 1;
-				player1Turn[1] = 3;
+				player1Turn[1] = 2;
 				player1Turn[2] = 5;
 				player1Turn[3] = 7;
 				player1Turn[4] = 9;
