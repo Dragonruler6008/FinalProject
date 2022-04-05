@@ -1,6 +1,5 @@
 package finalProject;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,14 +8,10 @@ import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import java.awt.Button;
-import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.Action;
-import javax.swing.JTextArea;
-import javax.swing.JComboBox;
+import java.util.Scanner;
+import javax.swing.JTextField;
 
 public class MainFrame extends JFrame implements ActionListener {
 
@@ -35,8 +30,32 @@ public class MainFrame extends JFrame implements ActionListener {
 					e.printStackTrace();
 				}
 			}
+			
 		});
+		// Startmethod();
 	}
+
+
+
+
+	//STILL TRYING TO FIGURE OUT HOW TO GRAB TEXT FROM THE JFRAMETEXT THINGY. maybe we just go with player 1 and player 2 for now then try to impliment names later on.
+	// public static void Startmethod()
+	// {
+	// System.out.println("Player 1, enter your name.");
+	// Input.addActionListener(new ActionListener(){
+
+	// 	public void actionPerformed(ActionEvent e){
+
+	// 		String name = Input.getText();
+
+	// 	}});
+				
+	// 		System.out.println("Player 2, enter your name.");
+			
+	// 		int score = 2;
+	// 		int score2 = 1;
+
+	// }
 	
 	//Globals
 	JButton btnNewButton_1;
@@ -49,14 +68,18 @@ public class MainFrame extends JFrame implements ActionListener {
 	JButton btnNewButton_8;
 	JButton btnNewButton_9;
 	JButton restartButton;
+	static JTextField Input;
+	JLabel textArea_1;
+	String name;
+	String name2;
 	
 	int player = 0;
 	//Need a player 1 and player 2 method.
-	private static void P1P2()
-	{
+	// private static void P1P2()
+	// {
 		
-// 	// int [] player = {1,3,5,7,9};
-// 	// int [] player2 = {2,4,6,8};
+// 	int [] player = {1,3,5,7,9};
+// 	int [] player2 = {2,4,6,8};
 	
 // 	for(int k = 0; k < 9; k++)
 // 	{
@@ -67,16 +90,12 @@ public class MainFrame extends JFrame implements ActionListener {
 // 		else if
 	
 // 	}
- }
+//  }
+	
+	//need a starting method here.
 	
 	
-	
-	
-	private JTextArea textArea;
-	private JButton btnNewButton;
-	
-	
-	
+
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -112,11 +131,14 @@ public class MainFrame extends JFrame implements ActionListener {
 		btnNewButton_9 = new JButton("-");
 		contentPane.add(btnNewButton_9);
 		
-		textArea = new JTextArea();
-		contentPane.add(textArea);
+		Input = new JTextField(8);  
+		contentPane.add(restartButton); 		
 		
 		restartButton = new JButton("Restart");
 		contentPane.add(restartButton);
+
+		textArea_1 = new JLabel();
+		contentPane.add(textArea_1);
 		
 		
 		btnNewButton_1.addActionListener(this);
@@ -129,6 +151,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		btnNewButton_8.addActionListener(this);
 		btnNewButton_9.addActionListener(this);
 		restartButton.addActionListener(this);
+		Input.addActionListener(this);
 	}
 
 	@Override
@@ -183,10 +206,20 @@ public class MainFrame extends JFrame implements ActionListener {
 			//who starts
 			int starter = ((int)(Math.random()*2)+1);
 			System.out.println("Player " + starter + " starts");
+			try (Scanner keyboard = new Scanner(System.in)) {
+				String name = keyboard.next();
+				String name2 = keyboard.next();
+				int score = 2;
+				int score2 = 1;
+
+
+				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
+				String text = String.format(template, name, score, name2, score2);
+				textArea_1.setText(text);
+			}
+
+
 
 		}
-		
 	}
-
-	//
 }
