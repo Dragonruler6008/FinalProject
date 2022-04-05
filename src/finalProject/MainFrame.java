@@ -20,6 +20,7 @@ import javax.swing.JTextArea;
 import javax.swing.JComboBox;
 import java.util.Scanner;
 import javax.swing.JTextField;
+import java.awt.Color;
 
 public class MainFrame extends JFrame implements ActionListener {
 
@@ -70,7 +71,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 
 
-	//STILL TRYING TO FIGURE OUT HOW TO GRAB TEXT FROM THE JFRAMETEXT THINGY. maybe we just go with player 1 and player 2 for now then try to impliment names later on.
+	//Sets the counter to zero to start the game up.
 	public static void Startmethod()
 	{
 		startupcounter = 0;
@@ -107,13 +108,13 @@ public class MainFrame extends JFrame implements ActionListener {
 	//need a starting method here.
 	
 
-
+	//The "MainFrame" where all the buttons get created and set up.
 	public MainFrame() {
-		
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100 , 450, 300);
+		setSize(1280,720);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(4, 3, 1, 1));
@@ -146,7 +147,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		contentPane.add(btnNewButton_9);
 		
 		Input = new JTextField(8);  
-		contentPane.add(Input); 		
+		contentPane.add(Input);
+		Input.setBackground(Color.CYAN); 		
 		
 		restartButton = new JButton("Restart");
 		contentPane.add(restartButton);
@@ -169,6 +171,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		Input.addActionListener(this);
 	}
 
+	//The action method. This allows us to run actions when the action listener is called.
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btnNewButton_1)
@@ -355,6 +358,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 
 		}
+		//Starting code to get player names and set them to the correct variables.
 		else if (e.getSource()==Input)
 		{
 			if(startupcounter == 0)
