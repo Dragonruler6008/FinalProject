@@ -52,8 +52,8 @@ public class MainFrame extends JFrame implements ActionListener {
 	
 	int player = 0;
 	//Need a player 1 and player 2 method.
-	private static void P1P2()
-	{
+	// private static void P1P2()
+	// {
 		
 // 	// int [] player = {1,3,5,7,9};
 // 	// int [] player2 = {2,4,6,8};
@@ -67,7 +67,7 @@ public class MainFrame extends JFrame implements ActionListener {
 // 		else if
 	
 // 	}
- }
+//  }
 	
 	
 	
