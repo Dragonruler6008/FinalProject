@@ -1,6 +1,5 @@
 package finalProject;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,15 +9,10 @@ import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import java.awt.Button;
-import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Action;
 import javax.swing.JTextArea;
-import javax.swing.JComboBox;
-import java.util.Scanner;
 import javax.swing.JTextField;
 import java.awt.Color;
 
