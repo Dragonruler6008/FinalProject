@@ -184,7 +184,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		}
 		else if(e.getSource()==btnNewButton_2)
 		{
-			btnNewButton_2.setEnabled(false)
+			btnNewButton_2.setEnabled(false);
 		}
 		else if(e.getSource()==btnNewButton_3)
 		{
@@ -218,8 +218,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		{
 			//some restart functions
 			//who starts//player turn variables
-			int [] player1Turn = new int[4]; 
-			int [] player2Turn = new int [4];
+			int [] player1Turn = new int[5]; 
+			int [] player2Turn = new int [5];
 			int starter = ((int)(Math.random()*2)+1);
 			if(starter == 1) {
 				player1Turn[0] = 1;
@@ -228,9 +228,15 @@ public class MainFrame extends JFrame implements ActionListener {
 				player1Turn[3] = 7;
 				player1Turn[4] = 9;
 				player2Turn[0] = 2;
-				player2Turn[0] = 4;
-				player2Turn[0] = 6;
-				player2Turn[0] = 8;
+				player2Turn[1] = 4;
+				player2Turn[2] = 6;
+				player2Turn[3] = 8;
+				player2Turn[4] = 10;
+				System.out.println(starter);
+				for(int i = 0; i < 5; i++) {
+					System.out.println(player1Turn[i]);
+					System.out.println(player2Turn[i]);
+				}
 			} else {
 				player2Turn[0] = 1;
 				player2Turn[1] = 3;
@@ -238,10 +244,17 @@ public class MainFrame extends JFrame implements ActionListener {
 				player2Turn[3] = 7;
 				player2Turn[4] = 9;
 				player1Turn[0] = 2;
-				player1Turn[0] = 4;
-				player1Turn[0] = 6;
-				player1Turn[0] = 8;
+				player1Turn[1] = 4;
+				player1Turn[2] = 6;
+				player1Turn[3] = 8;
+				player1Turn[4] = 10;
+				System.out.println(starter);
+				for(int i = 0; i < 5; i++) {
+					System.out.println(player2Turn[i]);
+					System.out.println(player1Turn[i]);
+					
 			}
+		}
 			System.out.println("Player " + starter + " starts");
 
 
