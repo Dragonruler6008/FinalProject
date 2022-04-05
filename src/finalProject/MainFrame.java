@@ -42,7 +42,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	int score;
 	int score2;
 	static int startupcounter;
-	
+	static int buttonTurnCounter = 0;
+	static int [] playerTurn = new int [9]; 
+
 	int player = 0;
 
 	private JPanel contentPane;
@@ -73,7 +75,6 @@ public class MainFrame extends JFrame implements ActionListener {
 	public static void Startmethod()
 	{
 		startupcounter = 0;
-		
 	}
 	
 	
@@ -109,7 +110,6 @@ public class MainFrame extends JFrame implements ActionListener {
 
 	//The "MainFrame" where all the buttons get created and set up.
 	public MainFrame() {
-		setTitle("Tick-Tack-Toe");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100 , 450, 300);
 		setSize(1280,720);
@@ -177,52 +177,175 @@ public class MainFrame extends JFrame implements ActionListener {
 		if(e.getSource()==btnNewButton_1)
 		{
 			btnNewButton_1.setEnabled(false);
-			if(player >= 1)
-			{
-			btnNewButton_1.setText("1");
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_1.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_1.setText("2");
 			}
 			else
 			{
-			btnNewButton_1.setText("0");
+			btnNewButton_1.setText("Game has not started");
 			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_2)
 		{
 			btnNewButton_2.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_2.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_2.setText("2");
+			}
+			else
+			{
+			btnNewButton_2.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_3)
 		{
 			btnNewButton_3.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_3.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_3.setText("2");
+			}
+			else
+			{
+			btnNewButton_3.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_4)
 		{
 			btnNewButton_4.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_4.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_4.setText("2");
+			}
+			else
+			{
+			btnNewButton_4.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_5)
 		{
 			btnNewButton_5.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_5.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_5.setText("2");
+			}
+			else
+			{
+			btnNewButton_5.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_6)
 		{
 			btnNewButton_6.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_6.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_6.setText("2");
+			}
+			else
+			{
+			btnNewButton_6.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_7)
 		{
 			btnNewButton_7.setEnabled(false);
-		}
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_7.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_7.setText("2");
+			}
+			else
+			{
+			btnNewButton_7.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
+		}	
 		else if(e.getSource()==btnNewButton_8)
 		{
 			btnNewButton_8.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_8.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_8.setText("2");
+			}
+			else
+			{
+			btnNewButton_8.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_9)
 		{
 			btnNewButton_9.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_9.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_9.setText("2");
+			}
+			else
+			{
+			btnNewButton_9.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==restartButton)
 		{
 			//some restart functions
-			//who starts
+			//who start
+			//player turn variables
 			int starter = ((int)(Math.random()*2)+1);
+			if(starter == 1) {
+				playerTurn[0] = 1;
+				playerTurn[1] = 2;
+				playerTurn[2] = 1;
+				playerTurn[3] = 2;
+				playerTurn[4] = 1;
+				playerTurn[5] = 2;
+				playerTurn[6] = 1;
+				playerTurn[7] = 2;
+				playerTurn[8] = 1;
+				System.out.println(starter);
+				for(int i = 0; i < 5; i++) {
+					System.out.println(playerTurn[i]);
+				}
+			} else {
+				playerTurn[0] = 2;
+				playerTurn[1] = 1;
+				playerTurn[2] = 2;
+				playerTurn[3] = 1;
+				playerTurn[4] = 2;
+				playerTurn[5] = 1;
+				playerTurn[6] = 2;
+				playerTurn[7] = 1;
+				playerTurn[8] = 2;
+				System.out.println(starter);
+				for(int i = 0; i < 5; i++) {
+					System.out.println(playerTurn[i]);
+					System.out.println(playerTurn[i]);
+					
+			}
+		}
 			System.out.println("Player " + starter + " starts");
 
 
