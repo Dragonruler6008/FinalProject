@@ -75,6 +75,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	public static void Startmethod()
 	{
 		startupcounter = 0;
+		//Name the restar button to Start to initialsize things.
 	}
 	
 	
@@ -121,30 +122,40 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 		btnNewButton_1 = new JButton("-");
 		contentPane.add(btnNewButton_1);
+		btnNewButton_1.setEnabled(false);
 		
 		btnNewButton_2 = new JButton("-");
 		contentPane.add(btnNewButton_2);
+		btnNewButton_2.setEnabled(false);
 		
 		btnNewButton_3 = new JButton("-");
 		contentPane.add(btnNewButton_3);
+		btnNewButton_3.setEnabled(false);
 		
 		btnNewButton_4 = new JButton("-");
 		contentPane.add(btnNewButton_4);
+		btnNewButton_4.setEnabled(false);
 		
 		btnNewButton_5 = new JButton("-");
 		contentPane.add(btnNewButton_5);
+		btnNewButton_5.setEnabled(false);
 		
 		btnNewButton_6 = new JButton("-");
 		contentPane.add(btnNewButton_6);
+		btnNewButton_6.setEnabled(false);
 		
 		btnNewButton_7 = new JButton("-");
 		contentPane.add(btnNewButton_7);
+		btnNewButton_7.setEnabled(false);
 		
 		btnNewButton_8 = new JButton("-");
 		contentPane.add(btnNewButton_8);
+		btnNewButton_8.setEnabled(false);
+
 		
 		btnNewButton_9 = new JButton("-");
 		contentPane.add(btnNewButton_9);
+		btnNewButton_9.setEnabled(false);
 		
 		Input = new JTextField(8);  
 		contentPane.add(Input);
@@ -343,6 +354,8 @@ public class MainFrame extends JFrame implements ActionListener {
 				for(int i = 0; i < 5; i++) {
 					System.out.println(playerTurn[i]);
 					System.out.println(playerTurn[i]);
+
+					//re-enable all buttons + reset text
 					
 			}
 		}
