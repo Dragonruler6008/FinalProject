@@ -69,7 +69,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 
 
-	//STILL TRYING TO FIGURE OUT HOW TO GRAB TEXT FROM THE JFRAMETEXT THINGY. maybe we just go with player 1 and player 2 for now then try to impliment names later on.
+	//Sets the counter to zero to start the game up.
 	public static void Startmethod()
 	{
 		startupcounter = 0;
@@ -107,7 +107,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	//need a starting method here.
 	
 
-
+	//The "MainFrame" where all the buttons get created and set up.
 	public MainFrame() {
 		setTitle("Tick-Tack-Toe");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -171,6 +171,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		Input.addActionListener(this);
 	}
 
+	//The action method. This allows us to run actions when the action listener is called.
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btnNewButton_1)
@@ -234,6 +235,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 
 		}
+		//Starting code to get player names and set them to the correct variables.
 		else if (e.getSource()==Input)
 		{
 			if(startupcounter == 0)
