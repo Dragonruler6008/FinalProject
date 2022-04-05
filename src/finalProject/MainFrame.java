@@ -199,34 +199,112 @@ public class MainFrame extends JFrame implements ActionListener {
 			{
 			btnNewButton_2.setText("Game has not started");
 			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_3)
 		{
 			btnNewButton_3.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_3.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_3.setText("2");
+			}
+			else
+			{
+			btnNewButton_3.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_4)
 		{
 			btnNewButton_4.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_4.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_4.setText("2");
+			}
+			else
+			{
+			btnNewButton_4.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_5)
 		{
 			btnNewButton_5.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_5.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_5.setText("2");
+			}
+			else
+			{
+			btnNewButton_5.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_6)
 		{
 			btnNewButton_6.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_6.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_6.setText("2");
+			}
+			else
+			{
+			btnNewButton_6.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_7)
 		{
 			btnNewButton_7.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_7.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_7.setText("2");
+			}
+			else
+			{
+			btnNewButton_7.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}	
 		else if(e.getSource()==btnNewButton_8)
 		{
 			btnNewButton_8.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_8.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_8.setText("2");
+			}
+			else
+			{
+			btnNewButton_8.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==btnNewButton_9)
 		{
 			btnNewButton_9.setEnabled(false);
+			if(1 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_9.setText("1");
+			}
+			else if(2 == playerTurn[buttonTurnCounter]) {
+				btnNewButton_9.setText("2");
+			}
+			else
+			{
+			btnNewButton_9.setText("Game has not started");
+			}
+			buttonTurnCounter ++;
 		}
 		else if(e.getSource()==restartButton)
 		{
