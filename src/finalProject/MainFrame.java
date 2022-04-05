@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 
-import javax.lang.model.util.ElementScanner14;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
@@ -17,44 +16,6 @@ import javax.swing.JTextField;
 
 public class MainFrame extends JFrame implements ActionListener {
 
-	
-
-	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainFrame frame = new MainFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			
-		});
-		// Startmethod();
-	}
-
-
-
-
-	//STILL TRYING TO FIGURE OUT HOW TO GRAB TEXT FROM THE JFRAMETEXT THINGY. maybe we just go with player 1 and player 2 for now then try to impliment names later on.
-	public static void Startmethod()
-	{
-		int startupcounter = 0;
-	System.out.println("Player 1, enter your name.");
-				
-	System.out.println("Player 2, enter your name.");
-			
-			int score = 2;
-			int score2 = 1;
-
-	}
-	
 	//Globals
 	JButton btnNewButton_1;
 	JButton btnNewButton_2;
@@ -67,14 +28,47 @@ public class MainFrame extends JFrame implements ActionListener {
 	JButton btnNewButton_9;
 	JButton restartButton;
 	static JTextField Input;
-	JLabel textArea_1;
+	static JLabel textArea_1;
 	String name;
 	String name2;
 	int score;
 	int score2;
-	int startupcounter = 0;
+	static int startupcounter;
 	
 	int player = 0;
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		Startmethod();
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainFrame frame = new MainFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+		});
+	}
+
+
+
+
+	//STILL TRYING TO FIGURE OUT HOW TO GRAB TEXT FROM THE JFRAMETEXT THINGY. maybe we just go with player 1 and player 2 for now then try to impliment names later on.
+	public static void Startmethod()
+	{
+		startupcounter = 0;
+		
+	}
+	
+	
+
 	//Need a player 1 and player 2 method.
 	// private static void P1P2()
 	// {
@@ -140,6 +134,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 		textArea_1 = new JLabel();
 		contentPane.add(textArea_1);
+		textArea_1.setText("Player 1, enter your name!");
 		
 		
 		btnNewButton_1.addActionListener(this);
@@ -222,7 +217,6 @@ public class MainFrame extends JFrame implements ActionListener {
 		}
 		else if (e.getSource()==Input)
 		{
-			int startupcounter = 0;
 			if(startupcounter == 0)
 			{
 				name = Input.getText();
@@ -241,6 +235,7 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 			else{
 				System.out.println("why you still typing here...");
+				Input.setText("");
 			}
 		}
 	}
