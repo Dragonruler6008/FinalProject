@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.awt.Color;
 
@@ -94,10 +93,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
 	
 	
-	
-	
-	private JTextArea textArea;
-	private JButton btnNewButton;
+
 
 	
 	//need a starting method here.
@@ -157,6 +153,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 		restartButton = new JButton("Restart");
 		contentPane.add(restartButton);
+		restartButton.setText("Push to start");
 
 		textArea_1 = new JLabel();
 		contentPane.add(textArea_1);
@@ -320,6 +317,12 @@ public class MainFrame extends JFrame implements ActionListener {
 			//who start
 			//player turn variables
 			int starter = ((int)(Math.random()*2)+1);
+			//make sure game cant start unless there are names present.
+			if(startupcounter <= 1)
+			{
+				Input.setText("Put your name here before starting the game");
+			}
+			else{
 			if(starter == 1) {
 				playerTurn[0] = 1;
 				playerTurn[1] = 2;
@@ -348,10 +351,23 @@ public class MainFrame extends JFrame implements ActionListener {
 				for(int i = 0; i < 5; i++) {
 					System.out.println(playerTurn[i]);
 					System.out.println(playerTurn[i]);
-
+				}
+			}		
+			
 					//re-enable all buttons + reset text
-					
-			}
+
+					btnNewButton_1.setEnabled(true);
+					btnNewButton_2.setEnabled(true);
+					btnNewButton_3.setEnabled(true);
+					btnNewButton_4.setEnabled(true);
+					btnNewButton_5.setEnabled(true);
+					btnNewButton_6.setEnabled(true);
+					btnNewButton_7.setEnabled(true);
+					btnNewButton_8.setEnabled(true);
+					btnNewButton_9.setEnabled(true);
+					restartButton.setText("Restart");
+
+
 		}
 			System.out.println("Player " + starter + " starts");
 
@@ -390,4 +406,16 @@ public class MainFrame extends JFrame implements ActionListener {
 			}
 		}
 	}
+
+	public static void wait(int ms)
+{
+    try
+    {
+        Thread.sleep(ms);
+    }
+    catch(InterruptedException ex)
+    {
+        Thread.currentThread().interrupt();
+    }
+}
 }
