@@ -37,6 +37,8 @@ public class MainFrame extends JFrame implements ActionListener {
 	static int startupcounter;
 	static int buttonTurnCounter = 0;
 	static int [] playerTurn = new int [9]; 
+	static int gamecounter = 0;
+	int starter;
 
 	int player = 0;
 
@@ -316,43 +318,77 @@ public class MainFrame extends JFrame implements ActionListener {
 			//some restart functions
 			//who start
 			//player turn variables
-			int starter = ((int)(Math.random()*2)+1);
+			
 			//make sure game cant start unless there are names present.
 			if(startupcounter <= 1)
 			{
 				Input.setText("Put your name here before starting the game");
 			}
-			else{
-			if(starter == 1) {
-				playerTurn[0] = 1;
-				playerTurn[1] = 2;
-				playerTurn[2] = 1;
-				playerTurn[3] = 2;
-				playerTurn[4] = 1;
-				playerTurn[5] = 2;
-				playerTurn[6] = 1;
-				playerTurn[7] = 2;
-				playerTurn[8] = 1;
-				System.out.println(starter);
-				for(int i = 0; i < 5; i++) {
-					System.out.println(playerTurn[i]);
+			else
+			{
+				//Game counter to start the game with player 1 every time unless reset is used. ***!!WE NEED CODE TO INCREMENT THIS ONCE A GAME IS WON!!***
+				if(gamecounter == 0)
+				{
+					starter = 1;
+					if(starter == 1) 
+					{
+						playerTurn[0] = 1;
+						playerTurn[1] = 2;
+						playerTurn[2] = 1;
+						playerTurn[3] = 2;
+						playerTurn[4] = 1;
+						playerTurn[5] = 2;
+						playerTurn[6] = 1;
+						playerTurn[7] = 2;
+						playerTurn[8] = 1;
+						//DEBUG CODE ONLY UNCOOMENT IF YOU BREAK SOMETHING
+						// System.out.println(starter);
+						// for(int i = 0; i < 5; i++) {
+						// 	System.out.println(playerTurn[i]);
+						// }
+					} 
+
 				}
-			} else {
-				playerTurn[0] = 2;
-				playerTurn[1] = 1;
-				playerTurn[2] = 2;
-				playerTurn[3] = 1;
-				playerTurn[4] = 2;
-				playerTurn[5] = 1;
-				playerTurn[6] = 2;
-				playerTurn[7] = 1;
-				playerTurn[8] = 2;
-				System.out.println(starter);
-				for(int i = 0; i < 5; i++) {
-					System.out.println(playerTurn[i]);
-					System.out.println(playerTurn[i]);
-				}
-			}		
+				else
+				{
+					buttonTurnCounter = 0;
+					int starter = ((int)(Math.random()*2)+1);
+					if(starter == 1) 
+					{
+						playerTurn[0] = 1;
+						playerTurn[1] = 2;
+						playerTurn[2] = 1;
+						playerTurn[3] = 2;
+						playerTurn[4] = 1;
+						playerTurn[5] = 2;
+						playerTurn[6] = 1;
+						playerTurn[7] = 2;
+						playerTurn[8] = 1;
+						//DEBUG CODE ONLY UNCOOMENT IF YOU BREAK SOMETHING
+						System.out.println(starter);
+						// for(int i = 0; i < 5; i++) {
+						// 	System.out.println(playerTurn[i]);
+						// }
+					} 
+					else 
+					{
+						playerTurn[0] = 2;
+						playerTurn[1] = 1;
+						playerTurn[2] = 2;
+						playerTurn[3] = 1;
+						playerTurn[4] = 2;
+						playerTurn[5] = 1;
+						playerTurn[6] = 2;
+						playerTurn[7] = 1;
+						playerTurn[8] = 2;
+						//DEBUG CODE ONLY UNCOOMENT IF YOU BREAK SOMETHING
+						System.out.println(starter);
+						// for(int i = 0; i < 5; i++) {
+						// 	System.out.println(playerTurn[i]);
+						// 	System.out.println(playerTurn[i]);
+						// }
+					}	
+				}		
 			
 					//re-enable all buttons + reset text
 
@@ -365,11 +401,22 @@ public class MainFrame extends JFrame implements ActionListener {
 					btnNewButton_7.setEnabled(true);
 					btnNewButton_8.setEnabled(true);
 					btnNewButton_9.setEnabled(true);
+
+					btnNewButton_1.setText("-");
+					btnNewButton_2.setText("-");
+					btnNewButton_3.setText("-");
+					btnNewButton_4.setText("-");
+					btnNewButton_5.setText("-");
+					btnNewButton_6.setText("-");
+					btnNewButton_7.setText("-");
+					btnNewButton_8.setText("-");
+					btnNewButton_9.setText("-");
+
+
 					restartButton.setText("Restart");
 
-
-		}
-			System.out.println("Player " + starter + " starts");
+			}
+			// System.out.println("Player " + starter + " starts");
 
 
 
