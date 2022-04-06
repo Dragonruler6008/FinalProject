@@ -18,15 +18,15 @@ import java.awt.Color;
 public class MainFrame extends JFrame implements ActionListener {
 
 	//Globals
-	JButton btnNewButton_1;
-	JButton btnNewButton_2;
-	JButton btnNewButton_3;
-	JButton btnNewButton_4;
-	JButton btnNewButton_5;
-	JButton btnNewButton_6;
-	JButton btnNewButton_7;
-	JButton btnNewButton_8;
-	JButton btnNewButton_9;
+	static JButton btnNewButton_1;
+	static JButton btnNewButton_2;
+	static JButton btnNewButton_3;
+	static JButton btnNewButton_4;
+	static JButton btnNewButton_5;
+	static JButton btnNewButton_6;
+	static JButton btnNewButton_7;
+	static JButton btnNewButton_8;
+	static JButton btnNewButton_9;
 	JButton restartButton;
 	static JTextField Input;
 	static JLabel textArea_1;
@@ -581,81 +581,96 @@ public class MainFrame extends JFrame implements ActionListener {
 		if (B1 == 1 && B2 == 1 && B3 == 1) {
 			//Lucas's button stop thing
 			score++;
+			buttonStop();
 		}
 		else if ((B4 == 1) && (B5 ==1) && (B6==1)) {
 			//Lucas's button stop thing
 			score++;
+			buttonStop();
 		}
 		else if ((B7 == 1) && (B8 ==1) && (B9==1)) {
 			//Lucas's button stop thing
 			score++;
+			buttonStop();
 		}
 		else if ((B1 == 1) && (B4 ==1) && (B7==1)) {
 			//Lucas's button stop thing
 			score++;
+			buttonStop();
 		}
 		else if ((B2==1)&&(B5==1)&&(B8==1)) {
 			//Lucas's button stop thing
 			score++;
+			buttonStop();
 		}
 		else if ((B3 == 1) && (B6 ==1) && (B9==1)) {
 			//Lucas's button stop thing
 			score++;
+			buttonStop();
 		}
 		else if ((B3 == 1) && (B5 ==1) && (B7==1)) {
 			//Lucas's button stop thing
 			score++;
+			buttonStop();
 		}
 		else if ((B1 == 1) && (B5 ==1) && (B9==1)) {
 			//Lucas's button stop thing
 			score++;
+			buttonStop();
 		} //player2 
 		else if (B1 == 2 && B2 == 2 && B3 == 2) {
 			//Lucas's button stop thing
 			score2++;
+			buttonStop();
 		}
 		else if ((B4 == 2) && (B5 ==2) && (B6==2)) {
 			//Lucas's button stop thing
 			score2++;
+			buttonStop();
 		}
 		else if ((B7 == 2) && (B8 ==2) && (B9==2)) {
 			//Lucas's button stop thing
 			score2++;
+			buttonStop();
 		}
 		else if ((B1 == 2) && (B4 ==2) && (B7==2)) {
 			//Lucas's button stop thing
 			score2++;
+			buttonStop();
 		}
 		else if ((B2==2)&&(B5==2)&&(B8==2)) {
 			//Lucas's button stop thing
 			score2++;
+			buttonStop();
 		}
 		else if ((B3 == 2) && (B6 ==2) && (B9==2)) {
 			//Lucas's button stop thing
 			score2++;
+			buttonStop();
 		}
 		else if ((B3 == 2) && (B5 ==2) && (B7==2)) {
 			//Lucas's button stop thing
 			score2++;
+			buttonStop();
 		}
 		else if ((B1 == 2) && (B5 ==2) && (B9==2)) {
 			//Lucas's button stop thing
 			score2++;
+			buttonStop();
 		}
 		
 		System.out.println(score);
 		System.out.println(score2);
 	}
 	private static void buttonStop() {
-	// 	btnNewButton_1.setEnabled(true);
-	// 	btnNewButton_2.setEnabled(false);
-	// 	btnNewButton_3.setEnabled(false);
-	// 	btnNewButton_4.setEnabled(false);
-	// 	btnNewButton_5.setEnabled(false);
-	// 	btnNewButton_6.setEnabled(false);
-	// 	btnNewButton_7.setEnabled(false);
-	// 	btnNewButton_8.setEnabled(false);
-	// 	btnNewButton_9.setEnabled(false);
-	// }
-}
+		btnNewButton_1.setEnabled(false);
+		btnNewButton_2.setEnabled(false);
+		btnNewButton_3.setEnabled(false);
+		btnNewButton_4.setEnabled(false);
+		btnNewButton_5.setEnabled(false);
+		btnNewButton_6.setEnabled(false);
+		btnNewButton_7.setEnabled(false);
+		btnNewButton_8.setEnabled(false);
+		btnNewButton_9.setEnabled(false);
+	}
 }
