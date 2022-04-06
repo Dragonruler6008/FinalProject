@@ -39,6 +39,18 @@ public class MainFrame extends JFrame implements ActionListener {
 	static int [] playerTurn = new int [9]; 
 	static int gamecounter = 0;
 	int starter;
+	//variables for boxes
+	static int B1;
+	static int B2;
+	static int B3;
+	static int B4;
+	static int B5;
+	static int B6;
+	static int B7;
+	static int B8;
+	static int B9;
+	static int player1Points;
+	static int player2Points;
 
 	//end of globals
 
@@ -155,6 +167,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B1=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -162,12 +175,14 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B1=2;
 			}
 			else
 			{
 				btnNewButton_1.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				
 		}
 		else if(e.getSource()==btnNewButton_2)
 		{
@@ -178,6 +193,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B2=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -185,6 +201,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B2=2;
 			}
 			else
 			{
@@ -201,6 +218,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B3=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -208,6 +226,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B3=2;
 			}
 			else
 			{
@@ -224,6 +243,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B4=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -231,6 +251,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B4=2;
 			}
 			else
 			{
@@ -247,6 +268,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B5=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -254,6 +276,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B5=2;
 			}
 			else
 			{
@@ -270,6 +293,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B6=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -277,6 +301,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B6=2;
 			}
 			else
 			{
@@ -293,6 +318,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B7=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -300,6 +326,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B7=2;
 			}
 			else
 			{
@@ -316,6 +343,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B8=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -323,6 +351,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B8=2;
 			}
 			else
 			{
@@ -339,6 +368,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B9=1;
 			}
 			else if(2 == playerTurn[buttonTurnCounter]) 
 			{
@@ -346,6 +376,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				B9=2;
 			}
 			else
 			{
@@ -525,4 +556,84 @@ public class MainFrame extends JFrame implements ActionListener {
         Thread.currentThread().interrupt();
     }
 }
+
+	//method to check if someone won
+	private static void WinCondition() {
+		//player 1 wins
+		if (B1 == 1 && B2 == 1 && B3 == 1) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B4 == 1) && (B5 ==1) && (B6==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B7 == 1) && (B8 ==1) && (B9==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B1 == 1) && (B4 ==1) && (B7==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B2==1)&&(B5==1)&&(B8==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B3 == 1) && (B6 ==1) && (B9==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B1 == 3) && (B2 ==5) && (B3==7)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B1 == 1) && (B5 ==1) && (B9==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		} //player2 
+		else if (B1 == 1 && B2 == 1 && B3 == 1) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B4 == 1) && (B5 ==1) && (B6==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B7 == 1) && (B8 ==1) && (B9==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B1 == 1) && (B4 ==1) && (B7==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B2==1)&&(B5==1)&&(B8==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B3 == 1) && (B6 ==1) && (B9==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B1 == 3) && (B2 ==5) && (B3==7)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+		else if ((B1 == 1) && (B5 ==1) && (B9==1)) {
+			//Lucas's button stop thing
+			player1Points++;
+		}
+	}
+	// private static void buttonStop() {
+	// 	btnNewButton_1.setEnabled(true);
+	// 	btnNewButton_2.setEnabled(false);
+	// 	btnNewButton_3.setEnabled(false);
+	// 	btnNewButton_4.setEnabled(false);
+	// 	btnNewButton_5.setEnabled(false);
+	// 	btnNewButton_6.setEnabled(false);
+	// 	btnNewButton_7.setEnabled(false);
+	// 	btnNewButton_8.setEnabled(false);
+	// 	btnNewButton_9.setEnabled(false);
+	// }
 }
