@@ -495,6 +495,7 @@ public class MainFrame extends JFrame implements ActionListener {
 						B9=0;
 
 					//Reset all button color on button reset press
+					
 					btnNewButton_1.setBackground(Color.white);
 					btnNewButton_2.setBackground(Color.white);
 					btnNewButton_3.setBackground(Color.white);
