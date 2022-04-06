@@ -32,8 +32,8 @@ public class MainFrame extends JFrame implements ActionListener {
 	static JLabel textArea_1;
 	String name;
 	String name2;
-	int score;
-	int score2;
+	static int score;
+	static int score2;
 	static int startupcounter;
 	static int buttonTurnCounter = 0;
 	static int [] playerTurn = new int [9]; 
@@ -182,7 +182,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_1.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
-				
+				WinCondition();
 		}
 		else if(e.getSource()==btnNewButton_2)
 		{
@@ -208,6 +208,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_2.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				WinCondition();
 		}
 		else if(e.getSource()==btnNewButton_3)
 		{
@@ -233,6 +234,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_3.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				WinCondition();
 		}
 		else if(e.getSource()==btnNewButton_4)
 		{
@@ -258,6 +260,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_4.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				WinCondition();
 		}
 		else if(e.getSource()==btnNewButton_5)
 		{
@@ -283,6 +286,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_5.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				WinCondition();
 		}
 		else if(e.getSource()==btnNewButton_6)
 		{
@@ -308,6 +312,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_6.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				WinCondition();
 		}
 		else if(e.getSource()==btnNewButton_7)
 		{
@@ -333,6 +338,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_7.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				WinCondition();
 		}	
 		else if(e.getSource()==btnNewButton_8)
 		{
@@ -358,6 +364,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_8.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				WinCondition();
 		}
 		else if(e.getSource()==btnNewButton_9)
 		{
@@ -383,6 +390,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				btnNewButton_9.setText("Game has not started");
 			}
 				buttonTurnCounter ++;
+				WinCondition();
 		}
 		else if(e.getSource()==restartButton)
 		{
@@ -439,7 +447,7 @@ public class MainFrame extends JFrame implements ActionListener {
 						playerTurn[7] = 2;
 						playerTurn[8] = 1;
 						//DEBUG CODE ONLY UNCOOMENT IF YOU BREAK SOMETHING
-						System.out.println(starter);
+						// System.out.println(starter);
 						// for(int i = 0; i < 5; i++) {
 						// 	System.out.println(playerTurn[i]);
 						// }
@@ -456,13 +464,23 @@ public class MainFrame extends JFrame implements ActionListener {
 						playerTurn[7] = 1;
 						playerTurn[8] = 2;
 						//DEBUG CODE ONLY UNCOOMENT IF YOU BREAK SOMETHING
-						System.out.println(starter);
+						// System.out.println(starter);
 						// for(int i = 0; i < 5; i++) {
 						// 	System.out.println(playerTurn[i]);
 						// 	System.out.println(playerTurn[i]);
 						// }
 					}	
 				}		
+				//Setting player values for buttons to 0
+						B1=0;
+						B2=0;
+						B3=0;
+						B4=0;
+						B5=0;
+						B6=0;
+						B7=0;
+						B8=0;
+						B9=0;
 			
 					//re-enable all buttons + reset text
 
@@ -493,7 +511,7 @@ public class MainFrame extends JFrame implements ActionListener {
 					String gametemplete = "<html><i>Game number %d! <br>Player %d starts!</i><html>";
 					String text1 = String.format(gametemplete, gamecounter, starter);
 					textArea_1.setText(text1);
-					System.out.println(starter);
+					// System.out.println(starter);
 
 				
 
@@ -562,70 +580,73 @@ public class MainFrame extends JFrame implements ActionListener {
 		//player 1 wins
 		if (B1 == 1 && B2 == 1 && B3 == 1) {
 			//Lucas's button stop thing
-			player1Points++;
+			score++;
 		}
 		else if ((B4 == 1) && (B5 ==1) && (B6==1)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score++;
 		}
 		else if ((B7 == 1) && (B8 ==1) && (B9==1)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score++;
 		}
 		else if ((B1 == 1) && (B4 ==1) && (B7==1)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score++;
 		}
 		else if ((B2==1)&&(B5==1)&&(B8==1)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score++;
 		}
 		else if ((B3 == 1) && (B6 ==1) && (B9==1)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score++;
 		}
-		else if ((B1 == 3) && (B2 ==5) && (B3==7)) {
+		else if ((B3 == 1) && (B5 ==1) && (B7==1)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score++;
 		}
 		else if ((B1 == 1) && (B5 ==1) && (B9==1)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score++;
 		} //player2 
-		else if (B1 == 1 && B2 == 1 && B3 == 1) {
+		else if (B1 == 2 && B2 == 2 && B3 == 2) {
 			//Lucas's button stop thing
-			player1Points++;
+			score2++;
 		}
-		else if ((B4 == 1) && (B5 ==1) && (B6==1)) {
+		else if ((B4 == 2) && (B5 ==2) && (B6==2)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score2++;
 		}
-		else if ((B7 == 1) && (B8 ==1) && (B9==1)) {
+		else if ((B7 == 2) && (B8 ==2) && (B9==2)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score2++;
 		}
-		else if ((B1 == 1) && (B4 ==1) && (B7==1)) {
+		else if ((B1 == 2) && (B4 ==2) && (B7==2)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score2++;
 		}
-		else if ((B2==1)&&(B5==1)&&(B8==1)) {
+		else if ((B2==2)&&(B5==2)&&(B8==2)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score2++;
 		}
-		else if ((B3 == 1) && (B6 ==1) && (B9==1)) {
+		else if ((B3 == 2) && (B6 ==2) && (B9==2)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score2++;
 		}
-		else if ((B1 == 3) && (B2 ==5) && (B3==7)) {
+		else if ((B3 == 2) && (B5 ==2) && (B7==2)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score2++;
 		}
-		else if ((B1 == 1) && (B5 ==1) && (B9==1)) {
+		else if ((B1 == 2) && (B5 ==2) && (B9==2)) {
 			//Lucas's button stop thing
-			player1Points++;
+			score2++;
 		}
+		
+		System.out.println(score);
+		System.out.println(score2);
 	}
-	// private static void buttonStop() {
+	private static void buttonStop() {
 	// 	btnNewButton_1.setEnabled(true);
 	// 	btnNewButton_2.setEnabled(false);
 	// 	btnNewButton_3.setEnabled(false);
@@ -636,4 +657,5 @@ public class MainFrame extends JFrame implements ActionListener {
 	// 	btnNewButton_8.setEnabled(false);
 	// 	btnNewButton_9.setEnabled(false);
 	// }
+}
 }
