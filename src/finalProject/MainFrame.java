@@ -95,47 +95,58 @@ public class MainFrame extends JFrame implements ActionListener {
 		btnNewButton_1 = new JButton("-");
 		contentPane.add(btnNewButton_1);
 		btnNewButton_1.setEnabled(false);
+		btnNewButton_1.setFont(btnNewButton_1.getFont().deriveFont(30f));
 		
 		btnNewButton_2 = new JButton("-");
 		contentPane.add(btnNewButton_2);
 		btnNewButton_2.setEnabled(false);
+		btnNewButton_2.setFont(btnNewButton_2.getFont().deriveFont(30f));
 		
 		btnNewButton_3 = new JButton("-");
 		contentPane.add(btnNewButton_3);
 		btnNewButton_3.setEnabled(false);
+		btnNewButton_3.setFont(btnNewButton_3.getFont().deriveFont(30f));
 		
 		btnNewButton_4 = new JButton("-");
 		contentPane.add(btnNewButton_4);
 		btnNewButton_4.setEnabled(false);
+		btnNewButton_4.setFont(btnNewButton_4.getFont().deriveFont(30f));
 		
 		btnNewButton_5 = new JButton("-");
 		contentPane.add(btnNewButton_5);
 		btnNewButton_5.setEnabled(false);
+		btnNewButton_5.setFont(btnNewButton_5.getFont().deriveFont(30f));
 		
 		btnNewButton_6 = new JButton("-");
 		contentPane.add(btnNewButton_6);
 		btnNewButton_6.setEnabled(false);
+		btnNewButton_6.setFont(btnNewButton_6.getFont().deriveFont(30f));
 		
 		btnNewButton_7 = new JButton("-");
 		contentPane.add(btnNewButton_7);
 		btnNewButton_7.setEnabled(false);
+		btnNewButton_7.setFont(btnNewButton_7.getFont().deriveFont(30f));
 		
 		btnNewButton_8 = new JButton("-");
 		contentPane.add(btnNewButton_8);
 		btnNewButton_8.setEnabled(false);
+		btnNewButton_8.setFont(btnNewButton_8.getFont().deriveFont(30f));
 
 		
 		btnNewButton_9 = new JButton("-");
 		contentPane.add(btnNewButton_9);
 		btnNewButton_9.setEnabled(false);
+		btnNewButton_9.setFont(btnNewButton_9.getFont().deriveFont(30f));
 		
 		Input = new JTextField(8);  
 		contentPane.add(Input);
-		Input.setBackground(Color.white); 		
+		Input.setBackground(Color.white); 
+		Input.setFont(Input.getFont().deriveFont(30f));		
 		
 		restartButton = new JButton("Restart");
 		contentPane.add(restartButton);
 		restartButton.setText("Push to start");
+		restartButton.setFont(restartButton.getFont().deriveFont(30f));
 
 		textArea_1 = new JLabel();
 		contentPane.add(textArea_1);
