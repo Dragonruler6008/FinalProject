@@ -30,8 +30,8 @@ public class MainFrame extends JFrame implements ActionListener {
 	JButton restartButton;
 	static JTextField Input;
 	static JLabel textArea_1;
-	String name;
-	String name2;
+	static String name;
+	static String name2;
 	static int score;
 	static int score2;
 	static int startupcounter;
@@ -582,87 +582,104 @@ public class MainFrame extends JFrame implements ActionListener {
 			//Lucas's button stop thing
 			score++;
 			buttonStop();
+			WinScreenP1();
 		}
 		else if ((B4 == 1) && (B5 ==1) && (B6==1)) {
 			//Lucas's button stop thing
 			score++;
 			buttonStop();
+			WinScreenP1();
 		}
 		else if ((B7 == 1) && (B8 ==1) && (B9==1)) {
 			//Lucas's button stop thing
 			score++;
 			buttonStop();
+			WinScreenP1();
 		}
 		else if ((B1 == 1) && (B4 ==1) && (B7==1)) {
 			//Lucas's button stop thing
 			score++;
 			buttonStop();
+			WinScreenP1();
 		}
 		else if ((B2==1)&&(B5==1)&&(B8==1)) {
 			//Lucas's button stop thing
 			score++;
 			buttonStop();
+			WinScreenP1();
 		}
 		else if ((B3 == 1) && (B6 ==1) && (B9==1)) {
 			//Lucas's button stop thing
 			score++;
 			buttonStop();
+			WinScreenP1();
 		}
 		else if ((B3 == 1) && (B5 ==1) && (B7==1)) {
 			//Lucas's button stop thing
 			score++;
 			buttonStop();
+			WinScreenP1();
 		}
 		else if ((B1 == 1) && (B5 ==1) && (B9==1)) {
 			//Lucas's button stop thing
 			score++;
 			buttonStop();
+			WinScreenP1();
 		} //player2 
 		else if (B1 == 2 && B2 == 2 && B3 == 2) {
 			//Lucas's button stop thing
 			score2++;
 			buttonStop();
+			WinScreenP2();
 		}
 		else if ((B4 == 2) && (B5 ==2) && (B6==2)) {
 			//Lucas's button stop thing
 			score2++;
 			buttonStop();
+			WinScreenP2();
 		}
 		else if ((B7 == 2) && (B8 ==2) && (B9==2)) {
 			//Lucas's button stop thing
 			score2++;
 			buttonStop();
+			WinScreenP2();
 		}
 		else if ((B1 == 2) && (B4 ==2) && (B7==2)) {
 			//Lucas's button stop thing
 			score2++;
 			buttonStop();
+			WinScreenP2();
 		}
 		else if ((B2==2)&&(B5==2)&&(B8==2)) {
 			//Lucas's button stop thing
 			score2++;
 			buttonStop();
+			WinScreenP2();
 		}
 		else if ((B3 == 2) && (B6 ==2) && (B9==2)) {
 			//Lucas's button stop thing
 			score2++;
 			buttonStop();
+			WinScreenP2();
 		}
 		else if ((B3 == 2) && (B5 ==2) && (B7==2)) {
 			//Lucas's button stop thing
 			score2++;
 			buttonStop();
+			WinScreenP2();
 		}
 		else if ((B1 == 2) && (B5 ==2) && (B9==2)) {
 			//Lucas's button stop thing
 			score2++;
 			buttonStop();
+			WinScreenP2();
 		}
 		
 		System.out.println(score);
 		System.out.println(score2);
 	}
-	private static void buttonStop() {
+	private static void buttonStop() 
+	{
 		btnNewButton_1.setEnabled(false);
 		btnNewButton_2.setEnabled(false);
 		btnNewButton_3.setEnabled(false);
@@ -672,5 +689,17 @@ public class MainFrame extends JFrame implements ActionListener {
 		btnNewButton_7.setEnabled(false);
 		btnNewButton_8.setEnabled(false);
 		btnNewButton_9.setEnabled(false);
+	}
+	private static void WinScreenP1()
+	{
+		String template = "<html><i>%s Wins!!</i><html>";
+				String text = String.format(template, name);
+				textArea_1.setText(text);
+	}
+	private static void WinScreenP2()
+	{
+		String template = "<html><i>%s Wins!!</i><html>";
+				String text = String.format(template, name2);
+				textArea_1.setText(text);
 	}
 }
