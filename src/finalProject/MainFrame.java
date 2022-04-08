@@ -19,8 +19,11 @@ import java.awt.Color;
 public class MainFrame extends JFrame implements ActionListener {
 
 	//Globals
+	//Menu Panel and stuff
 	static JButton Click;
+	static JButton Credits;
 	CardLayout cl;
+	//MainGame Panel buttons and stuff
 	static JButton btnNewButton_1;
 	static JButton btnNewButton_2;
 	static JButton btnNewButton_3;
@@ -109,6 +112,10 @@ public class MainFrame extends JFrame implements ActionListener {
 		Menu.add(Click);
 		Click.setFont(Click.getFont().deriveFont(50f));
 		Menu.add(Click, BorderLayout.SOUTH);
+
+		Credits = new JButton("credits");
+		Menu.add(Credits, BorderLayout.WEST);
+		Credits.setFont(Credits.getFont().deriveFont(20));
 
 
 
