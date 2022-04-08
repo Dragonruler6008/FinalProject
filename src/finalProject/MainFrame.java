@@ -2,10 +2,11 @@ package finalProject;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
+import java.awt.*;
+
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -18,6 +19,8 @@ import java.awt.Color;
 public class MainFrame extends JFrame implements ActionListener {
 
 	//Globals
+	static JButton Click;
+	CardLayout cl;
 	static JButton btnNewButton_1;
 	static JButton btnNewButton_2;
 	static JButton btnNewButton_3;
@@ -87,69 +90,94 @@ public class MainFrame extends JFrame implements ActionListener {
 		setBounds(100, 100 , 450, 300);
 		setSize(1280,720);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(4, 3, 1, 1));
+		contentPane.setLayout(new CardLayout(0,0));
+		cl = (CardLayout) (contentPane.getLayout());
+
+		JPanel Menu = new JPanel();
+		contentPane.add(Menu, "Menu");
+		Menu.setLayout(new BorderLayout(0,0));
+		
+		JLabel GameTitle = new JLabel("Tic-Tac-Toe");
+		Menu.add(GameTitle);
+		GameTitle.setFont(GameTitle.getFont().deriveFont(30f));
+		GameTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		Menu.add(GameTitle, BorderLayout.NORTH);
+
+		Click = new JButton("Go to game");
+		Menu.add(Click);
+		Click.setFont(Click.getFont().deriveFont(50f));
+		Menu.add(Click, BorderLayout.SOUTH);
+
+
+
+
+		JPanel MainGame = new JPanel();
+		contentPane.add(MainGame, "MainGame");
+		MainGame.setBackground(Color.BLACK);
+		MainGame.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		MainGame.setLayout(new GridLayout(4, 3, 1, 1));
 		
 		btnNewButton_1 = new JButton("-");
-		contentPane.add(btnNewButton_1);
+		MainGame.add(btnNewButton_1);
 		btnNewButton_1.setEnabled(false);
 		btnNewButton_1.setFont(btnNewButton_1.getFont().deriveFont(50f));
 		
 		btnNewButton_2 = new JButton("-");
-		contentPane.add(btnNewButton_2);
+		MainGame.add(btnNewButton_2);
 		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.setFont(btnNewButton_2.getFont().deriveFont(50f));
 		
 		btnNewButton_3 = new JButton("-");
-		contentPane.add(btnNewButton_3);
+		MainGame.add(btnNewButton_3);
 		btnNewButton_3.setEnabled(false);
 		btnNewButton_3.setFont(btnNewButton_3.getFont().deriveFont(50f));
 		
 		btnNewButton_4 = new JButton("-");
-		contentPane.add(btnNewButton_4);
+		MainGame.add(btnNewButton_4);
 		btnNewButton_4.setEnabled(false);
 		btnNewButton_4.setFont(btnNewButton_4.getFont().deriveFont(50f));
 		
 		btnNewButton_5 = new JButton("-");
-		contentPane.add(btnNewButton_5);
+		MainGame.add(btnNewButton_5);
 		btnNewButton_5.setEnabled(false);
 		btnNewButton_5.setFont(btnNewButton_5.getFont().deriveFont(50f));
 		
 		btnNewButton_6 = new JButton("-");
-		contentPane.add(btnNewButton_6);
+		MainGame.add(btnNewButton_6);
 		btnNewButton_6.setEnabled(false);
 		btnNewButton_6.setFont(btnNewButton_6.getFont().deriveFont(50f));
 		
 		btnNewButton_7 = new JButton("-");
-		contentPane.add(btnNewButton_7);
+		MainGame.add(btnNewButton_7);
 		btnNewButton_7.setEnabled(false);
 		btnNewButton_7.setFont(btnNewButton_7.getFont().deriveFont(50f));
 		
 		btnNewButton_8 = new JButton("-");
-		contentPane.add(btnNewButton_8);
+		MainGame.add(btnNewButton_8);
 		btnNewButton_8.setEnabled(false);
 		btnNewButton_8.setFont(btnNewButton_8.getFont().deriveFont(50f));
 
 		
 		btnNewButton_9 = new JButton("-");
-		contentPane.add(btnNewButton_9);
+		MainGame.add(btnNewButton_9);
 		btnNewButton_9.setEnabled(false);
 		btnNewButton_9.setFont(btnNewButton_9.getFont().deriveFont(50f));
 		
 		Input = new JTextField(8);  
-		contentPane.add(Input);
+		MainGame.add(Input);
 		Input.setBackground(Color.white); 
 		Input.setFont(Input.getFont().deriveFont(30f));		
 		
 		restartButton = new JButton("Restart");
-		contentPane.add(restartButton);
+		MainGame.add(restartButton);
 		restartButton.setText("Push to start");
 		restartButton.setFont(restartButton.getFont().deriveFont(30f));
 
 		textArea_1 = new JLabel();
-		contentPane.add(textArea_1);
+		MainGame	.add(textArea_1);
 		textArea_1.setFont(textArea_1.getFont().deriveFont(30f));
 		textArea_1.setText("Player 1, enter your name!");
 		
@@ -165,6 +193,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		btnNewButton_9.addActionListener(this);
 		restartButton.addActionListener(this);
 		Input.addActionListener(this);
+		Click.addActionListener(this);
 	}
 
 	//The action method. This allows us to run actions when the action listener is called.
@@ -574,6 +603,10 @@ public class MainFrame extends JFrame implements ActionListener {
 				System.out.println("why you still typing here...");
 				Input.setText("");
 			}
+		}
+		else if (e.getSource()==Click)
+		{
+			cl.show(contentPane, "MainGame");
 		}
 	}
 
