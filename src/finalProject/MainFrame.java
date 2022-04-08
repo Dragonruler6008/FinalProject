@@ -19,10 +19,14 @@ import java.awt.Color;
 public class MainFrame extends JFrame implements ActionListener {
 
 	//Globals
+	GridBagConstraints c;
 	//Menu Panel and stuff
 	static JButton Click;
-	static JButton Credits;
+	static JButton Creditsbutton;
 	CardLayout cl;
+	//Credits panel 
+	JPanel creditsPanel;
+	JButton backMenuC;
 	//MainGame Panel buttons and stuff
 	static JButton btnNewButton_1;
 	static JButton btnNewButton_2;
@@ -86,7 +90,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		startupcounter = 0;
 	}
 
-	//The "MainFrame" where all the buttons get created and set up.
+	//The "MainFrame" where all the buttons and panels get created and set up.
 	public MainFrame() {
 		setTitle("Tic-Tac-Toe");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -97,29 +101,76 @@ public class MainFrame extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(new CardLayout(0,0));
 		cl = (CardLayout) (contentPane.getLayout());
+		c = new GridBagConstraints();
 
+		//Menu panel
 		JPanel Menu = new JPanel();
 		contentPane.add(Menu, "Menu");
-		Menu.setLayout(new BorderLayout(0,0));
+		Menu.setLayout(new GridBagLayout());
 		
 		JLabel GameTitle = new JLabel("Tic-Tac-Toe");
-		Menu.add(GameTitle);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.CENTER;
+		c.weightx = 1.0;
+		c.gridx = 1;
+		c.gridy = 0;
+		Menu.add(GameTitle, c);
 		GameTitle.setFont(GameTitle.getFont().deriveFont(30f));
-		GameTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		Menu.add(GameTitle, BorderLayout.NORTH);
+
+		
 
 		Click = new JButton("Go to game");
-		Menu.add(Click);
-		Click.setFont(Click.getFont().deriveFont(50f));
-		Menu.add(Click, BorderLayout.SOUTH);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 2;
+		c.gridy = 2;
+		c.anchor = GridBagConstraints.LAST_LINE_END;
+		c.weighty = 1.0;
+		c.ipady = 80;
+		Menu.add(Click, c);
+		// Click.setFont(Click.getFont().deriveFont(50f));
+		
 
-		Credits = new JButton("credits");
-		Menu.add(Credits, BorderLayout.WEST);
-		Credits.setFont(Credits.getFont().deriveFont(20));
+		Creditsbutton = new JButton("Credits");	
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 2;
+		c.ipady = 80;
+		c.anchor = GridBagConstraints.LAST_LINE_START;
+		c.weighty = 1.0;
+		Menu.add(Creditsbutton, c);
+		// Credits.setFont(Credits.getFont().deriveFont(20));
+
+		//Credits panel
+		creditsPanel = new JPanel();
+		contentPane.add(creditsPanel, "Credits");
+		creditsPanel.setLayout(new GridBagLayout());
+
+		JLabel CreditsPage = new JLabel();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.CENTER;
+		c.gridx = 1;
+		c.gridy = 1;
+		CreditsPage.setFont(CreditsPage.getFont().deriveFont(40f));
+		// c.ipadx = 100;
+		// c.ipady = 100;
+		// c.weightx = 1.0;
+		// c.weighty = 1.0;
+		c.anchor = GridBagConstraints.CENTER;
+		CreditsPage.setText("Hello!");
+		creditsPanel.add(CreditsPage, c);
+
+		backMenuC = new JButton("Back to the menu");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.CENTER;
+		c.anchor = GridBagConstraints.PAGE_END;
+		c.gridx = 1;
+		c.gridy = 2;
+		creditsPanel.add(backMenuC, c);
 
 
 
 
+		//Maingame Panel
 		JPanel MainGame = new JPanel();
 		contentPane.add(MainGame, "MainGame");
 		MainGame.setBackground(Color.BLACK);
@@ -201,6 +252,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		restartButton.addActionListener(this);
 		Input.addActionListener(this);
 		Click.addActionListener(this);
+		Creditsbutton.addActionListener(this);
+		backMenuC.addActionListener(this);
 	}
 
 	//The action method. This allows us to run actions when the action listener is called.
@@ -614,6 +667,14 @@ public class MainFrame extends JFrame implements ActionListener {
 		else if (e.getSource()==Click)
 		{
 			cl.show(contentPane, "MainGame");
+		}
+		else if (e.getSource()==Creditsbutton)
+		{
+			cl.show(contentPane, "Credits");
+		}
+		else if (e.getSource()==backMenuC)
+		{
+			cl.show(contentPane, "Menu");
 		}
 	}
 
