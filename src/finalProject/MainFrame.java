@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.metal.MetalBorders.TextFieldBorder;
+
 import java.awt.*;
 
 
@@ -12,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.annotation.Retention;
 
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -28,6 +31,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	JPanel creditsPanel;
 	JButton backMenuC;
 	//MainGame Panel buttons and stuff
+	JPanel MainGame;
 	static JButton btnNewButton_1;
 	static JButton btnNewButton_2;
 	static JButton btnNewButton_3;
@@ -157,7 +161,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		// c.weightx = 1.0;
 		// c.weighty = 1.0;
 		c.anchor = GridBagConstraints.CENTER;
-		CreditsPage.setText("Hello!");
+		CreditsPage.setText("<html>Created by:<br>Lucas Bigler<br>Nick Savage</i><html>");
 		creditsPanel.add(CreditsPage, c);
 
 		backMenuC = new JButton("Back to the menu");
@@ -166,13 +170,14 @@ public class MainFrame extends JFrame implements ActionListener {
 		c.anchor = GridBagConstraints.PAGE_END;
 		c.gridx = 1;
 		c.gridy = 2;
+		c.ipadx = 200;
 		creditsPanel.add(backMenuC, c);
-
+		backMenuC.setFont(CreditsPage.getFont().deriveFont(30f));
 
 
 
 		//Maingame Panel
-		JPanel MainGame = new JPanel();
+		MainGame = new JPanel();
 		contentPane.add(MainGame, "MainGame");
 		MainGame.setBackground(Color.BLACK);
 		MainGame.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -259,6 +264,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		Click.addActionListener(this);
 		Creditsbutton.addActionListener(this);
 		backMenuC.addActionListener(this);
+		backfromgame.addActionListener(this);
 	}
 
 	//The action method. This allows us to run actions when the action listener is called.
@@ -661,6 +667,12 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				MainGame.remove(Input);
+				MainGame.remove(restartButton);
+				MainGame.remove(textArea_1);
+				MainGame.add(backfromgame);
+				MainGame.add(restartButton);
+				MainGame.add(textArea_1);
 				Input.setEnabled(false);
 			}
 			else
@@ -678,6 +690,10 @@ public class MainFrame extends JFrame implements ActionListener {
 			cl.show(contentPane, "Credits");
 		}
 		else if (e.getSource()==backMenuC)
+		{
+			cl.show(contentPane, "Menu");
+		}
+		else if (e.getSource()==backfromgame)
 		{
 			cl.show(contentPane, "Menu");
 		}
