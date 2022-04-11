@@ -5,7 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.metal.MetalBorders.TextFieldBorder;
 
 import java.awt.*;
 
@@ -14,7 +13,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.annotation.Retention;
 
 import javax.swing.JTextField;
 import java.awt.Color;
