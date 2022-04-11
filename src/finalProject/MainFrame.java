@@ -37,6 +37,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	static JButton btnNewButton_7;
 	static JButton btnNewButton_8;
 	static JButton btnNewButton_9;
+	static JButton backfromgame;
 	JButton restartButton;
 	static JTextField Input;
 	static JLabel textArea_1;
@@ -125,7 +126,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		c.gridy = 2;
 		c.anchor = GridBagConstraints.LAST_LINE_END;
 		c.weighty = 1.0;
-		c.ipady = 80;
+		c.ipady = 200;
 		Menu.add(Click, c);
 		// Click.setFont(Click.getFont().deriveFont(50f));
 		
@@ -134,7 +135,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 0;
 		c.gridy = 2;
-		c.ipady = 80;
+		c.ipady = 200;
 		c.anchor = GridBagConstraints.LAST_LINE_START;
 		c.weighty = 1.0;
 		Menu.add(Creditsbutton, c);
@@ -223,6 +224,10 @@ public class MainFrame extends JFrame implements ActionListener {
 		MainGame.add(btnNewButton_9);
 		btnNewButton_9.setEnabled(false);
 		btnNewButton_9.setFont(btnNewButton_9.getFont().deriveFont(50f));
+
+		backfromgame = new JButton("Back to menu");
+		backfromgame.setBackground(Color.white);
+		backfromgame.setFont(backfromgame.getFont().deriveFont(30f));
 		
 		Input = new JTextField(8);  
 		MainGame.add(Input);
