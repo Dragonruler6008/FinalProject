@@ -1,19 +1,14 @@
 package finalProject;
 
 import java.awt.EventQueue;
-
 import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import java.awt.*;
-
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JTextField;
 import java.awt.Color;
 
@@ -43,6 +38,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	JButton restartButton;
 	static JTextField Input;
 	static JLabel textArea_1;
+	//Other variables for game internals
 	static String name;
 	static String name2;
 	static int score;
