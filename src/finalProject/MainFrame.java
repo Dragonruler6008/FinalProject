@@ -4,15 +4,19 @@ import java.awt.EventQueue;
 import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.MouseInputListener;
+
 import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JTextField;
 import java.awt.Color;
 
-public class MainFrame extends JFrame implements ActionListener {
+public class MainFrame extends JFrame implements ActionListener,MouseInputListener {
 
 	//Globals
 	GridBagConstraints c;
@@ -255,6 +259,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		btnNewButton_9.addActionListener(this);
 		restartButton.addActionListener(this);
 		Input.addActionListener(this);
+		Input.addMouseListener(this);
 		Click.addActionListener(this);
 		Creditsbutton.addActionListener(this);
 		backMenuC.addActionListener(this);
@@ -507,6 +512,7 @@ public class MainFrame extends JFrame implements ActionListener {
 			//make sure game cant start unless there are names present.
 			if(startupcounter <= 1)
 			{
+				Input.setFont(Input.getFont().deriveFont(20f));
 				Input.setText("Put your name here before starting the game");
 			}
 			else
@@ -901,5 +907,44 @@ public class MainFrame extends JFrame implements ActionListener {
 		String template = "<html><i>%s Wins!!<br>Your score now is %d</i><html>";
 				String text = String.format(template, name2, score2);
 				textArea_1.setText(text);
+	}
+
+	//Mouse click events
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		if (Input.getText().equals("Put your name here before starting the game"))
+    {
+        Input.setText("");
+		Input.setFont(Input.getFont().deriveFont(30f));
+    }	
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		if (Input.getText().equals("Put your name here before starting the game"))
+		{
+			Input.setText("");
+			Input.setFont(Input.getFont().deriveFont(30f));
+		}	
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {	
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent arg0) {	
 	}
 }
