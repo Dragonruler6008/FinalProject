@@ -18,6 +18,7 @@ import java.awt.Color;
 public class MainFrame extends JFrame implements ActionListener {
 
 	//Globals
+	//test
 	static JButton btnNewButton_1;
 	static JButton btnNewButton_2;
 	static JButton btnNewButton_3;
@@ -780,5 +781,6 @@ public class MainFrame extends JFrame implements ActionListener {
 		String template = "<html><i>%s Wins!!<br>Your score now is %d</i><html>";
 				String text = String.format(template, name2, score2);
 				textArea_1.setText(text);
+				
 	}
 }
