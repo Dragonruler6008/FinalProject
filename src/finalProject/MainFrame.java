@@ -1,26 +1,28 @@
 package finalProject;
 
+//Imports for fun libraries that didn't totally make me hit my head on my keyboard more then once.
 import java.awt.EventQueue;
 import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.MouseInputListener;
-
 import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JTextField;
 import java.awt.Color;
 
+//End of Imports
+
+//Start of ALL the suffering that we went through.
 public class MainFrame extends JFrame implements ActionListener,MouseInputListener {
 
 	//Globals
+	//Menu Panel and stuff, I also hate gridbacg layout but what you gonna do. -L
 	GridBagConstraints c;
-	//Menu Panel and stuff
 	static JButton Click;
 	static JButton Creditsbutton;
 	CardLayout cl;
@@ -42,7 +44,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 	JButton restartButton;
 	static JTextField Input;
 	static JLabel textArea_1;
-	//Other variables for game internals
+	//Other variables for game internals, yea, we ran with this and kept going.
 	static String name;
 	static String name2;
 	static int score;
@@ -65,13 +67,14 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 	static int player1Points;
 	static int player2Points;
 
-	//end of globals
+	//End of globals
 
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
+	//The Run Statment, where all the fun comes from.
 	public static void main(String[] args) {
 		Startmethod();
 		EventQueue.invokeLater(new Runnable() {
@@ -93,7 +96,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		startupcounter = 0;
 	}
 
-	//The "MainFrame" where all the buttons and panels get created and set up.
+	//The "MainFrame" where all the buttons and panels get created and set up. I suffer and I forgor how to write gridbag layouts, they hard but cool. -L
 	public MainFrame() {
 		setTitle("Tic-Tac-Toe");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -174,7 +177,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 
 
 
-		//Maingame Panel
+		//Maingame Panel; Where the main game happens on this panel. Creates all the buttons and text fields. :)
 		MainGame = new JPanel();
 		contentPane.add(MainGame, "MainGame");
 		MainGame.setBackground(Color.BLACK);
@@ -247,7 +250,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		textArea_1.setFont(textArea_1.getFont().deriveFont(30f));
 		textArea_1.setText("Player 1, enter your name!");
 		
-		
+		//Action Listeners, make clicking buttons and text fields way easier to manage.
 		btnNewButton_1.addActionListener(this);
 		btnNewButton_2.addActionListener(this);
 		btnNewButton_3.addActionListener(this);
@@ -259,14 +262,14 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		btnNewButton_9.addActionListener(this);
 		restartButton.addActionListener(this);
 		Input.addActionListener(this);
-		Input.addMouseListener(this);
+		Input.addMouseListener(this); //This stupid mouse listener make me wana forgor this project.
 		Click.addActionListener(this);
 		Creditsbutton.addActionListener(this);
 		backMenuC.addActionListener(this);
 		backfromgame.addActionListener(this);
 	}
 
-	//The action method. This allows us to run actions when the action listener is called.
+	//The action method. This allows us to run actions when the action listener is called. We used lots of else if here because it works for one method. :)
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btnNewButton_1)
@@ -509,7 +512,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 			//who start
 			//player turn variables
 			
-			//make sure game cant start unless there are names present.
+			//make sure game cant start unless there are names present. This was fun to develop, uh huh. ;)
 			if(startupcounter <= 1)
 			{
 				Input.setFont(Input.getFont().deriveFont(20f));
@@ -517,7 +520,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 			}
 			else
 			{
-				//Game counter to start the game with player 1 every time unless reset is used. ***!!WE NEED CODE TO INCREMENT THIS ONCE A GAME IS WON!!***
+				//Game counter to start the game with player 1 every time unless reset is used.
 				if(gamecounter == 0)
 				{
 					starter = 1;
@@ -532,7 +535,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 						playerTurn[6] = 1;
 						playerTurn[7] = 2;
 						playerTurn[8] = 1;
-						//DEBUG CODE ONLY UNCOOMENT IF YOU BREAK SOMETHING
+						// DEBUG CODE ONLY UNCOMMENT IF YOU BREAK SOMETHING
 						// System.out.println(starter);
 						// for(int i = 0; i < 5; i++) {
 						// 	System.out.println(playerTurn[i]);
@@ -558,7 +561,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 						playerTurn[6] = 1;
 						playerTurn[7] = 2;
 						playerTurn[8] = 1;
-						//DEBUG CODE ONLY UNCOOMENT IF YOU BREAK SOMETHING
+						// DEBUG CODE ONLY UNCOMMENT IF YOU BREAK SOMETHING
 						// System.out.println(starter);
 						// for(int i = 0; i < 5; i++) {
 						// 	System.out.println(playerTurn[i]);
@@ -575,7 +578,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 						playerTurn[6] = 2;
 						playerTurn[7] = 1;
 						playerTurn[8] = 2;
-						//DEBUG CODE ONLY UNCOOMENT IF YOU BREAK SOMETHING
+						// DEBUG CODE ONLY UNCOMMENT IF YOU BREAK SOMETHING
 						// System.out.println(starter);
 						// for(int i = 0; i < 5; i++) {
 						// 	System.out.println(playerTurn[i]);
@@ -583,7 +586,7 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 						// }
 					}	
 				}		
-				//Setting player values for buttons to 0
+				//Setting player values for buttons to 0 on restart
 						B1=0;
 						B2=0;
 						B3=0;
@@ -636,12 +639,12 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 					String text1 = String.format(gametemplete, gamecounter, starter);
 					textArea_1.setText(text1);
 
-					//DEBUG CODE
+					// DEBUG CODE
 					// System.out.println(starter);
 					// System.out.println(gamecounter);
 
 			}
-			//DEBUG CODE (CODE STORAGE)
+			// DEBUG CODE (CODE STORAGE)
 			// System.out.println("Player " + starter + " starts");
 			// 	String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 			// 	String text = String.format(template, name, score, name2, score2);
@@ -712,13 +715,12 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 //     }
 // }
 
-	//method to check if someone won
+	//method to check if someone won cause its tic-tac-toe, we need to know the winner right? ;) -L
 	private static void WinCondition() 
 	{
 		//player 1 wins
 		if (B1 == 1 && B2 == 1 && B3 == 1) 
 		{
-			//Lucas's button stop thing
 			score++;
 			buttonStop();
 			WinScreenP1();
@@ -728,7 +730,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B4 == 1) && (B5 ==1) && (B6==1)) 
 		{
-			//Lucas's button stop thing
 			score++;
 			buttonStop();
 			WinScreenP1();
@@ -738,7 +739,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B7 == 1) && (B8 ==1) && (B9==1)) 
 		{
-			//Lucas's button stop thing
 			score++;
 			buttonStop();
 			WinScreenP1();
@@ -748,7 +748,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B1 == 1) && (B4 ==1) && (B7==1)) 
 		{
-			//Lucas's button stop thing
 			score++;
 			buttonStop();
 			WinScreenP1();
@@ -758,7 +757,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B2==1)&&(B5==1)&&(B8==1)) 
 		{
-			//Lucas's button stop thing
 			score++;
 			buttonStop();
 			WinScreenP1();
@@ -768,7 +766,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B3 == 1) && (B6 ==1) && (B9==1)) 
 		{
-			//Lucas's button stop thing
 			score++;
 			buttonStop();
 			WinScreenP1();
@@ -778,7 +775,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B3 == 1) && (B5 ==1) && (B7==1)) 
 		{
-			//Lucas's button stop thing
 			score++;
 			buttonStop();
 			WinScreenP1();
@@ -786,18 +782,18 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 			btnNewButton_5.setBackground(Color.green);
 			btnNewButton_7.setBackground(Color.green);
 		}
-		else if ((B1 == 1) && (B5 ==1) && (B9==1)) {
-			//Lucas's button stop thing
+		else if ((B1 == 1) && (B5 ==1) && (B9==1))
+		{
 			score++;
 			buttonStop();
 			WinScreenP1();
 			btnNewButton_1.setBackground(Color.green);
 			btnNewButton_5.setBackground(Color.green);
 			btnNewButton_9.setBackground(Color.green);
-		} //player2 
+		} 
+		//player2 game win logic
 		else if (B1 == 2 && B2 == 2 && B3 == 2) 
 		{
-			//Lucas's button stop thing
 			score2++;
 			buttonStop();
 			WinScreenP2();
@@ -807,7 +803,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B4 == 2) && (B5 ==2) && (B6==2)) 
 		{
-			//Lucas's button stop thing
 			score2++;
 			buttonStop();
 			WinScreenP2();
@@ -817,7 +812,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B7 == 2) && (B8 ==2) && (B9==2)) 
 		{
-			//Lucas's button stop thing
 			score2++;
 			buttonStop();
 			WinScreenP2();
@@ -827,7 +821,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B1 == 2) && (B4 ==2) && (B7==2)) 
 		{
-			//Lucas's button stop thing
 			score2++;
 			buttonStop();
 			WinScreenP2();
@@ -837,7 +830,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B2==2)&&(B5==2)&&(B8==2)) 
 		{
-			//Lucas's button stop thing
 			score2++;
 			buttonStop();
 			WinScreenP2();
@@ -847,7 +839,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B3 == 2) && (B6 ==2) && (B9==2)) 
 		{
-			//Lucas's button stop thing
 			score2++;
 			buttonStop();
 			WinScreenP2();
@@ -857,7 +848,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B3 == 2) && (B5 ==2) && (B7==2)) 
 		{
-			//Lucas's button stop thing
 			score2++;
 			buttonStop();
 			WinScreenP2();
@@ -867,7 +857,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		}
 		else if ((B1 == 2) && (B5 ==2) && (B9==2)) 
 		{
-			//Lucas's button stop thing
 			score2++;
 			buttonStop();
 			WinScreenP2();
@@ -875,15 +864,18 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 			btnNewButton_5.setBackground(Color.green);
 			btnNewButton_9.setBackground(Color.green);
 		}
+		//Happy tie logic :)
 		else if ((B1 != 0) && (B2 != 0) && (B3 != 0) && (B4 != 0) && (B5 != 0) && (B6 != 0) && (B7 != 0) && (B8 != 0) && (B9 != 0)) {
 			String template = "<html><i> Game results in a tie.<br> Press restart to play again.</i><html>";
 				String text = String.format(template, name, score);
 				textArea_1.setText(text);
 		}
 		
-		System.out.println(score);
-		System.out.println(score2);
+		// DEBUG CODE ONLY UNCOMMENT IF YOU BREAK SOMETHING
+		// System.out.println(score);
+		// System.out.println(score2);
 	}
+	//Turns all buttons in the main game to stop being able to be clicked when called. Makes it imposible for an accidental two wins.
 	private static void buttonStop() 
 	{
 		btnNewButton_1.setEnabled(false);
@@ -896,12 +888,14 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 		btnNewButton_8.setEnabled(false);
 		btnNewButton_9.setEnabled(false);
 	}
+	//P1 win screen shows P1 Score and tells them they won.
 	private static void WinScreenP1()
 	{
 		String template = "<html><i>%s Wins!!<br>Your score now is %d</i><html>";
 				String text = String.format(template, name, score);
 				textArea_1.setText(text);
 	}
+	//P2 win screen shows P2 Score and tells them they won.
 	private static void WinScreenP2()
 	{
 		String template = "<html><i>%s Wins!!<br>Your score now is %d</i><html>";
@@ -909,14 +903,15 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 				textArea_1.setText(text);
 	}
 
-	//Mouse click events
+	//Mouse click events, Took a while to figure out ngl, BUT IT WORKS HEHEHEHEHEHEHE ;) -L
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
+	public void mouseClicked(MouseEvent arg0) 
+	{
 		if (Input.getText().equals("Put your name here before starting the game"))
-    {
-        Input.setText("");
-		Input.setFont(Input.getFont().deriveFont(30f));
-    }	
+   		{	
+        	Input.setText("");
+			Input.setFont(Input.getFont().deriveFont(30f));
+    	}	
 	}
 
 	@Override
@@ -928,7 +923,8 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 	}
 
 	@Override
-	public void mousePressed(MouseEvent arg0) {
+	public void mousePressed(MouseEvent arg0) 
+	{
 		if (Input.getText().equals("Put your name here before starting the game"))
 		{
 			Input.setText("");
@@ -947,4 +943,6 @@ public class MainFrame extends JFrame implements ActionListener,MouseInputListen
 	@Override
 	public void mouseMoved(MouseEvent arg0) {	
 	}
+	//End of mouse click events.
 }
+//END OF CODE NOTHING MORE HERE GO TALK TO SOME HUMANS NOW. XD (This is also where the suffering ends if you wanted to know, but I actually had plenty of fun on this. -L)
