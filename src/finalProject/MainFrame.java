@@ -1,23 +1,30 @@
 package finalProject;
 
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
+import javax.swing.*;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-
+import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JTextField;
 import java.awt.Color;
 
 public class MainFrame extends JFrame implements ActionListener {
 
 	//Globals
+	GridBagConstraints c;
+	//Menu Panel and stuff
+	static JButton Click;
+	static JButton Creditsbutton;
+	CardLayout cl;
+	//Credits panel 
+	JPanel creditsPanel;
+	JButton backMenuC;
+	//MainGame Panel buttons and stuff
+	JPanel MainGame;
 	static JButton btnNewButton_1;
 	static JButton btnNewButton_2;
 	static JButton btnNewButton_3;
@@ -27,9 +34,11 @@ public class MainFrame extends JFrame implements ActionListener {
 	static JButton btnNewButton_7;
 	static JButton btnNewButton_8;
 	static JButton btnNewButton_9;
+	static JButton backfromgame;
 	JButton restartButton;
 	static JTextField Input;
 	static JLabel textArea_1;
+	//Other variables for game internals
 	static String name;
 	static String name2;
 	static int score;
@@ -80,76 +89,157 @@ public class MainFrame extends JFrame implements ActionListener {
 		startupcounter = 0;
 	}
 
-	//The "MainFrame" where all the buttons get created and set up.
+	//The "MainFrame" where all the buttons and panels get created and set up.
 	public MainFrame() {
 		setTitle("Tic-Tac-Toe");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100 , 450, 300);
 		setSize(1280,720);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(4, 3, 1, 1));
+		contentPane.setLayout(new CardLayout(0,0));
+		cl = (CardLayout) (contentPane.getLayout());
+		c = new GridBagConstraints();
+
+		//Menu panel
+		JPanel Menu = new JPanel();
+		contentPane.add(Menu, "Menu");
+		Menu.setLayout(new GridBagLayout());
+		
+		JLabel GameTitle = new JLabel("Tic-Tac-Toe");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.CENTER;
+		c.weightx = 1.0;
+		c.gridx = 1;
+		c.gridy = 0;
+		Menu.add(GameTitle, c);
+		GameTitle.setFont(GameTitle.getFont().deriveFont(30f));
+
+		
+
+		Click = new JButton("Go to game");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 2;
+		c.gridy = 2;
+		c.anchor = GridBagConstraints.LAST_LINE_END;
+		c.weighty = 1.0;
+		c.ipady = 200;
+		Menu.add(Click, c);
+		// Click.setFont(Click.getFont().deriveFont(50f));
+		
+
+		Creditsbutton = new JButton("Credits");	
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 2;
+		c.ipady = 200;
+		c.anchor = GridBagConstraints.LAST_LINE_START;
+		c.weighty = 1.0;
+		Menu.add(Creditsbutton, c);
+		// Credits.setFont(Credits.getFont().deriveFont(20));
+
+		//Credits panel
+		creditsPanel = new JPanel();
+		contentPane.add(creditsPanel, "Credits");
+		creditsPanel.setLayout(new GridBagLayout());
+
+		JLabel CreditsPage = new JLabel();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.CENTER;
+		c.gridx = 1;
+		c.gridy = 1;
+		CreditsPage.setFont(CreditsPage.getFont().deriveFont(40f));
+		// c.ipadx = 100;
+		// c.ipady = 100;
+		// c.weightx = 1.0;
+		// c.weighty = 1.0;
+		c.anchor = GridBagConstraints.CENTER;
+		CreditsPage.setText("<html>Created by:<br>Lucas Bigler<br>Nick Savage</i><html>");
+		creditsPanel.add(CreditsPage, c);
+
+		backMenuC = new JButton("Back to the menu");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.CENTER;
+		c.anchor = GridBagConstraints.PAGE_END;
+		c.gridx = 1;
+		c.gridy = 2;
+		c.ipadx = 200;
+		creditsPanel.add(backMenuC, c);
+		backMenuC.setFont(CreditsPage.getFont().deriveFont(30f));
+
+
+
+		//Maingame Panel
+		MainGame = new JPanel();
+		contentPane.add(MainGame, "MainGame");
+		MainGame.setBackground(Color.BLACK);
+		MainGame.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		MainGame.setLayout(new GridLayout(4, 3, 1, 1));
 		
 		btnNewButton_1 = new JButton("-");
-		contentPane.add(btnNewButton_1);
+		MainGame.add(btnNewButton_1);
 		btnNewButton_1.setEnabled(false);
 		btnNewButton_1.setFont(btnNewButton_1.getFont().deriveFont(50f));
 		
 		btnNewButton_2 = new JButton("-");
-		contentPane.add(btnNewButton_2);
+		MainGame.add(btnNewButton_2);
 		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.setFont(btnNewButton_2.getFont().deriveFont(50f));
 		
 		btnNewButton_3 = new JButton("-");
-		contentPane.add(btnNewButton_3);
+		MainGame.add(btnNewButton_3);
 		btnNewButton_3.setEnabled(false);
 		btnNewButton_3.setFont(btnNewButton_3.getFont().deriveFont(50f));
 		
 		btnNewButton_4 = new JButton("-");
-		contentPane.add(btnNewButton_4);
+		MainGame.add(btnNewButton_4);
 		btnNewButton_4.setEnabled(false);
 		btnNewButton_4.setFont(btnNewButton_4.getFont().deriveFont(50f));
 		
 		btnNewButton_5 = new JButton("-");
-		contentPane.add(btnNewButton_5);
+		MainGame.add(btnNewButton_5);
 		btnNewButton_5.setEnabled(false);
 		btnNewButton_5.setFont(btnNewButton_5.getFont().deriveFont(50f));
 		
 		btnNewButton_6 = new JButton("-");
-		contentPane.add(btnNewButton_6);
+		MainGame.add(btnNewButton_6);
 		btnNewButton_6.setEnabled(false);
 		btnNewButton_6.setFont(btnNewButton_6.getFont().deriveFont(50f));
 		
 		btnNewButton_7 = new JButton("-");
-		contentPane.add(btnNewButton_7);
+		MainGame.add(btnNewButton_7);
 		btnNewButton_7.setEnabled(false);
 		btnNewButton_7.setFont(btnNewButton_7.getFont().deriveFont(50f));
 		
 		btnNewButton_8 = new JButton("-");
-		contentPane.add(btnNewButton_8);
+		MainGame.add(btnNewButton_8);
 		btnNewButton_8.setEnabled(false);
 		btnNewButton_8.setFont(btnNewButton_8.getFont().deriveFont(50f));
 
 		
 		btnNewButton_9 = new JButton("-");
-		contentPane.add(btnNewButton_9);
+		MainGame.add(btnNewButton_9);
 		btnNewButton_9.setEnabled(false);
 		btnNewButton_9.setFont(btnNewButton_9.getFont().deriveFont(50f));
+
+		backfromgame = new JButton("Back to menu");
+		backfromgame.setBackground(Color.white);
+		backfromgame.setFont(backfromgame.getFont().deriveFont(30f));
 		
 		Input = new JTextField(8);  
-		contentPane.add(Input);
+		MainGame.add(Input);
 		Input.setBackground(Color.white); 
 		Input.setFont(Input.getFont().deriveFont(30f));		
 		
 		restartButton = new JButton("Restart");
-		contentPane.add(restartButton);
+		MainGame.add(restartButton);
 		restartButton.setText("Push to start");
 		restartButton.setFont(restartButton.getFont().deriveFont(30f));
 
 		textArea_1 = new JLabel();
-		contentPane.add(textArea_1);
+		MainGame	.add(textArea_1);
 		textArea_1.setFont(textArea_1.getFont().deriveFont(30f));
 		textArea_1.setText("Player 1, enter your name!");
 		
@@ -165,6 +255,10 @@ public class MainFrame extends JFrame implements ActionListener {
 		btnNewButton_9.addActionListener(this);
 		restartButton.addActionListener(this);
 		Input.addActionListener(this);
+		Click.addActionListener(this);
+		Creditsbutton.addActionListener(this);
+		backMenuC.addActionListener(this);
+		backfromgame.addActionListener(this);
 	}
 
 	//The action method. This allows us to run actions when the action listener is called.
@@ -567,6 +661,12 @@ public class MainFrame extends JFrame implements ActionListener {
 				String template = "<html><i>%s = %d <br>%s = %d</i><html>";
 				String text = String.format(template, name, score, name2, score2);
 				textArea_1.setText(text);
+				MainGame.remove(Input);
+				MainGame.remove(restartButton);
+				MainGame.remove(textArea_1);
+				MainGame.add(backfromgame);
+				MainGame.add(restartButton);
+				MainGame.add(textArea_1);
 				Input.setEnabled(false);
 			}
 			else
@@ -574,6 +674,22 @@ public class MainFrame extends JFrame implements ActionListener {
 				System.out.println("why you still typing here...");
 				Input.setText("");
 			}
+		}
+		else if (e.getSource()==Click)
+		{
+			cl.show(contentPane, "MainGame");
+		}
+		else if (e.getSource()==Creditsbutton)
+		{
+			cl.show(contentPane, "Credits");
+		}
+		else if (e.getSource()==backMenuC)
+		{
+			cl.show(contentPane, "Menu");
+		}
+		else if (e.getSource()==backfromgame)
+		{
+			cl.show(contentPane, "Menu");
 		}
 	}
 
