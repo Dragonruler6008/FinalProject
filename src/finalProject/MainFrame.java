@@ -869,6 +869,11 @@ public class MainFrame extends JFrame implements ActionListener {
 			btnNewButton_5.setBackground(Color.green);
 			btnNewButton_9.setBackground(Color.green);
 		}
+		else if ((B1 != 0) && (B2 != 0) && (B3 != 0) && (B4 != 0) && (B5 != 0) && (B6 != 0) && (B7 != 0) && (B8 != 0) && (B9 != 0)) {
+			String template = "<html><i> Game results in a tie.<br> Press restart to play again.</i><html>";
+				String text = String.format(template, name, score);
+				textArea_1.setText(text);
+		}
 		
 		System.out.println(score);
 		System.out.println(score2);
